@@ -1,4 +1,4 @@
-name: Deploy Astleta Backend
+name: Deploy Astleta Backend + Frontend
 
 on:
   push:
@@ -21,18 +21,45 @@ jobs:
           key: ${{ secrets.PROD_SSH_KEY }}
           port: 22
           script: |
-             cd /var/www/astleta/backend
-                  echo "Atualizando o código"
-                  git pull origin main
+            # === BACKEND ===
+            cd /var/www/astleta/backend
+            echo "Atualizando o código backend..."
+            git pull origin main
 
-                  echo "Instalando dependências do PHP"
-                  composer install --no-dev --optimize-autoloader
+            echo "Instalando dependências do PHP..."
+            composer install --no-dev --optimize-autoloader
 
-                  echo "Executando as migrações"
-                  php artisan migrate --force
+            echo "Executando migrações e seeders..."
+            php artisan migrate --force
+            php artisan db:seed --force
 
-                  echo "Otimizando o Laravel"
-                  php artisan optimize
+            echo "Limpando caches do Laravel..."
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan route:clear
+            php artisan view:clear
 
-                  echo "Reiniciando o PHP-FPM"
-                  sudo systemctl restart php8.3-fpm
+            echo "Reiniciando o Horizon..."
+            php artisan horizon:terminate
+
+            echo "Otimizando o Laravel..."
+            php artisan optimize
+
+            echo "Reiniciando o PHP-FPM..."
+            sudo systemctl restart php8.3-fpm
+
+            # === FRONTEND ===
+            cd /var/www/astleta/frontend
+            echo "Atualizando código frontend..."
+            git pull origin main
+
+            echo "Instalando dependências do Node.js..."
+            npm install
+
+            echo "Rodando build do Vue 3 / Vite..."
+            npm run build
+
+            echo "Copiando build para dist..."
+            cp -r dist/* /var/www/astleta/frontend/dist/
+
+            echo "Deploy completo!"
