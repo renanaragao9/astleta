@@ -1,0 +1,38 @@
+name: Deploy Astleta Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: deploy
+          key: ${{ secrets.PROD_SSH_KEY }}
+          port: 22
+          script: |
+             cd /var/www/astleta/backend
+                  echo "Atualizando o código"
+                  git pull origin main
+
+                  echo "Instalando dependências do PHP"
+                  composer install --no-dev --optimize-autoloader
+
+                  echo "Executando as migrações"
+                  php artisan migrate --force
+
+                  echo "Otimizando o Laravel"
+                  php artisan optimize
+
+                  echo "Reiniciando o PHP-FPM"
+                  sudo systemctl restart php8.3-fpm
