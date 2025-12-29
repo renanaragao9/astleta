@@ -1,0 +1,62 @@
+id: 73594
+name: astleta-api
+environments:
+    production:
+      domains:
+        - api.astleta.com
+      queues:
+        - default-production
+      database: astleta
+      storage: 'astleta-prod'
+      memory: 2048
+      timeout: 120
+      cli-memory: 512
+      runtime: 'php-8.4:al2'
+      build:
+        - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+        - 'composer dump-autoload --optimize --no-dev'
+        - 'php artisan config:cache'
+        - 'php artisan route:cache'
+        - 'php artisan event:cache'
+        - 'npm ci && npm run build && rm -rf node_modules'
+      variables:
+        APP_NAME: Astleta
+        APP_ENV: production
+        APP_KEY: base64:IHxwmQE8auORjlCRJrO0YM6JCpDV2rmVSvSE369hPrU=
+        APP_DEBUG: true
+        APP_URL: https://tnz4emlmlup2bahhk6rbydfbkm0aprlf.lambda-url.sa-east-1.on.aws
+        FRONTEND_URL: https://astleta.com
+        LOG_CHANNEL: stack
+        LOG_LEVEL: error
+        BROADCAST_DRIVER: log
+        CACHE_DRIVER: dynamodb
+        QUEUE_CONNECTION: sqs
+        SESSION_DRIVER: dynamodb
+        S3_BASE_PATH: astleta
+        AWS_USE_PATH_STYLE_ENDPOINT: false
+        PUSHER_APP_ID: ""
+        PUSHER_APP_KEY: ""
+        PUSHER_APP_SECRET: ""
+        PUSHER_HOST: ""
+        PUSHER_PORT: 443
+        PUSHER_SCHEME: https
+        PUSHER_APP_CLUSTER: mt1
+        VITE_APP_NAME: Astleta
+        VITE_PUSHER_APP_KEY: ""
+        VITE_PUSHER_HOST: ""
+        VITE_PUSHER_PORT: 443
+        VITE_PUSHER_SCHEME: https
+        VITE_PUSHER_APP_CLUSTER: mt1
+        SYSTEM_FEE_PERCENTAGE: 0
+        GOOGLE_MAPS_API_KEY: ""
+        PIKA_LABS_API_KEY: ""
+        COMPANY_CNPJ: XX.XXX.XXX/XXXX-XX
+        COMPANY_EMAIL: contato@astleta.com.br
+        MAIL_MAILER: smtp
+        MAIL_HOST: smtp.hostinger.com
+        MAIL_PORT: 465
+        MAIL_USERNAME: astleta@astleta.com
+        MAIL_PASSWORD: Goku@alvinegro12
+        MAIL_ENCRYPTION: ssl
+        MAIL_FROM_ADDRESS: astleta@astleta.com
+        MAIL_FROM_NAME: Astleta

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;1,6..12,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(100, 116, 139);
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #F1F5F9;
+}
+
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 2rem 2.225rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: rgb(100, 116, 139);
+    padding-bottom: 0.25rem;
+}
+
+.img-logo {
+    margin: auto;
+    padding-bottom: 4.8rem;
+    height: 3rem;
+    width: 3rem;
+
+}
+
+.form-input {
+    box-sizing: border-box;
+    font-size: .875rem;
+    line-height: 2rem;
+    border-radius: 5px;
+    border: solid rgb(226, 232, 240) 1px;
+    width: 100%;
+    margin-top: 0.40rem;
+    margin-bottom: 1.5rem;
+    margin-right: 10rem;
+    text-indent: 0.6rem;
+}
+
+.error {
+    margin-top: -1.5rem;
+    margin-bottom:-1.2rem;
+    color: red;
+}
+
+.separator {
+    margin: 0.5rem auto 1rem;
+    padding: 0.125rem;
+}
+
+.separator > svg {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    margin-bottom: 6rem;
+    padding-top: 1rem;
+}
+
+.footer > a {
+    text-decoration: none;
+}
+
+label {
+    margin-bottom: 5rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    color: #FFFFFF;
+    background-color: #EB640A;
+    border-radius: 0.35rem;
+    padding: 0.75rem;
+    height: 2.5rem;
+    width: 100%;
+    margin-top: 1.25rem;
+    border: none;
+}
+
+button:hover {
+    background-color: #FFCB03;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .img-logo {
+        padding-bottom: 4rem;
+    }
+
+    .main-login {
+        font-size: 0.9rem;
+    }
+
+    .error{
+        margin-bottom: -0.3rem;
+    }
+    .footer {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .main-login {
+        font-size: 0.7rem;
+    }
+
+    .form-input {
+        line-height: 1.5rem;
+    }
+
+    .error{
+        margin-bottom: -0.1rem;
+    }
+    button {
+        padding: 0.2rem;
+        height: 2rem;
+        font-size: 0.7rem;
+    }
+
+    .footer {
+        font-size: 0.7rem;
+    }
+}
+
+
