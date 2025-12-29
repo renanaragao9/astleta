@@ -20,6 +20,7 @@ jobs:
           username: deploy
           key: ${{ secrets.PROD_SSH_KEY }}
           port: 22
+          debug: true
           script: |
             # === BACKEND ===
             cd /var/www/astleta/backend
@@ -58,8 +59,5 @@ jobs:
 
             echo "Rodando build do Vue 3 / Vite..."
             npm run build
-
-            echo "Copiando build para dist..."
-            cp -r dist/* /var/www/astleta/frontend/dist/
 
             echo "Deploy completo!"
