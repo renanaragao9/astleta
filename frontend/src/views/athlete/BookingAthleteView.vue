@@ -350,7 +350,7 @@ const applyFilters = (): void => {
                             </Column>
                         </DataTable>
 
-                        <div v-if="(bookingStore.bookings.length === 0 && !bookingStore.loading) || bookingStore.pagination?.total === 0" class="text-center mt-4">Mostrando 0 a 0 de 0 reservas</div>
+                        <div v-if="bookingStore.pagination?.total === 0 && bookingStore.bookings.length > 0" class="text-center mt-4">Mostrando 0 a 0 de 0 reservas</div>
                     </div>
 
                     <div class="block md:hidden">

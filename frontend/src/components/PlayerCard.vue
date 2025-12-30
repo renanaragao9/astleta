@@ -65,7 +65,6 @@ const textColor = computed(() => {
             </div>
             <div class="player-picture">
                 <img v-if="imagePath" :src="imagePath" :alt="`Foto de ${athleteName}`" draggable="false" @click="openModal(imagePath)" @error="(event) => ((event.target as HTMLImageElement).src = 'https://via.placeholder.com/300x400?text=Atleta')" />
-                <img v-else src="https://via.placeholder.com/300x400?text=Atleta" :alt="`Foto de ${athleteName}`" draggable="false" @click="openModal('https://via.placeholder.com/300x400?text=Atleta')" />
                 <div class="player-extra" v-if="extra && extra.length > 0">
                     <span v-for="item in extra" :key="item">{{ item }}</span>
                 </div>
@@ -206,8 +205,8 @@ const textColor = computed(() => {
 }
 
 .astleta-player-card .player-card-top .player-picture img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     -o-object-fit: cover;
     object-fit: cover;
     position: relative;

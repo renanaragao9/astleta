@@ -68,13 +68,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         parent::boot();
 
-        Nova::footer(function ($request) {
+        Nova::footer(function ($request): string {
             $year = date('Y');
 
             return Blade::render("<center> © Direitos reservados a <a> SeuRacha </a> - Painel Admin {$year} </center>");
         });
 
-        Nova::mainMenu(function () {
+        Nova::mainMenu(function (): array {
             return [
                 MenuSection::make('Autenticação', [
                     MenuItem::resource(Profile::class),
@@ -154,7 +154,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     protected function gate(): void
     {
-        Gate::define('viewNova', function ($user) {
+        Gate::define('viewNova', function ($user): bool {
             return true;
         });
     }

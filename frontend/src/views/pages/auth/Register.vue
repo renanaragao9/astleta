@@ -148,6 +148,10 @@ const goToLogin = () => {
     router.push({ name: 'login' });
 };
 
+const goToHome = () => {
+    router.push('/');
+};
+
 const openTermsModal = () => {
     activePrivacyTab.value = 'terms';
     showPrivacyModal.value = true;
@@ -228,11 +232,13 @@ const openPrivacyModal = () => {
                         <span v-if="registerError" class="text-red-500 text-sm">{{ registerError }}</span>
 
                         <div class="md:col-span-2 space-y-4">
-                            <Button label="Criar conta" class="w-full" :loading="loading" @click="handleRegister" />
+                            <Button label="Criar conta" icon="pi pi-user-plus" class="w-full" :loading="loading" @click="handleRegister" />
 
                             <div class="text-center mt-4 pb-10">
                                 <span class="text-muted-color">Já tem uma conta? </span>
                                 <Button label="Fazer login" link class="font-medium text-primary p-0" @click="goToLogin" />
+                                <br />
+                                <Tag icon="pi pi-home" value="Ir para o Início" @click="goToHome" class="cursor-pointer font-medium text-primary mt-8" style="background-color: transparent; border: none" />
                             </div>
                         </div>
                     </div>

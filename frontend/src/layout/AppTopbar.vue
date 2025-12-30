@@ -5,7 +5,6 @@ import { useAuthStore } from '@/stores/auth/loginStore';
 import { useRouter } from 'vue-router';
 import Popover from 'primevue/popover';
 import Notification from '@/components/Notification.vue';
-import AppConfigurator from './AppConfigurator.vue';
 
 interface LayoutContext {
     toggleMenu: () => void;
@@ -99,16 +98,6 @@ const goHome = () => {
                     <i :class="['pi', { 'pi-moon': isDarkTheme, 'pi-sun': !isDarkTheme, 'text-gray-600 dark:text-gray-300': true }]"></i>
                 </button>
                 <Notification />
-                <div class="relative">
-                    <button
-                        type="button"
-                        class="layout-topbar-action"
-                        v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }"
-                    >
-                        <i class="pi pi-palette"></i>
-                    </button>
-                    <AppConfigurator />
-                </div>
             </div>
 
             <button type="button" class="layout-topbar-action" @click="goHome">

@@ -6,7 +6,6 @@ import InputText from 'primevue/inputtext';
 import Popover from 'primevue/popover';
 import { useAuthStore } from '@/stores/auth/loginStore';
 import Notification from '@/components/Notification.vue';
-import AppConfigurator from '@/layout/AppConfigurator.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -140,19 +139,14 @@ const handleSearch = () => {
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button
-                            type="button"
-                            class="layout-topbar-action topbar-configurator"
-                            v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }"
-                        >
-                            <i class="pi pi-palette"></i>
-                        </button>
-                        <AppConfigurator />
-                    </div>
-
                     <div class="layout-config-menu">
                         <Notification class="topbar-notification" />
+                    </div>
+
+                    <div v-if="authStore.isAuthenticated" class="layout-topbar-action">
+                        <button @click="navigateToProfile" type="button" class="layout-topbar-action hover:bg-gray-50 transition-colors rounded-lg p-2">
+                            <i :class="authStore.user?.profile?.name === 'company' ? 'pi pi-building topbar-profile-icon text-gray-600 dark:text-gray-300' : 'pi pi-user topbar-profile-icon text-gray-600 dark:text-gray-300'"></i>
+                        </button>
                     </div>
 
                     <div class="relative">
@@ -165,6 +159,7 @@ const handleSearch = () => {
                             <div v-else class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                                 <i class="pi pi-user text-white text-sm"></i>
                             </div>
+                            <span class="hidden md:inline text-sm font-medium text-gray-900">{{ authStore.user?.name }}</span>
                             <i class="pi pi-chevron-down text-gray-500 text-sm"></i>
                         </div>
 
@@ -278,6 +273,10 @@ const handleSearch = () => {
 }
 
 .topbar-notification :deep(.pi-bell) {
+    font-size: 1.5rem !important;
+}
+
+.topbar-profile-icon {
     font-size: 1.5rem !important;
 }
 

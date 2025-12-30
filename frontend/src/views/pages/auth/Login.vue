@@ -90,6 +90,10 @@ const goToRegister = () => {
     router.push({ name: 'register' });
 };
 
+const goToHome = () => {
+    router.push('/');
+};
+
 onMounted(() => {
     window.addEventListener('beforeinstallprompt', (e: Event) => {
         e.preventDefault();
@@ -140,11 +144,13 @@ const installPWA = async () => {
                         <router-link :to="{ name: 'forgotPassword' }" class="font-medium no-underline ml-2 text-right cursor-pointer text-primary">Esqueceu a senha?</router-link>
                     </div>
                     <Message severity="error" v-if="errorMessage" class="mb-2" icon="pi pi-exclamation-triangle">{{ errorMessage }}</Message>
-                    <Button label="Entrar" type="submit" class="w-full" :loading="loading"></Button>
+                    <Button label="Entrar" icon="pi pi-sign-in" type="submit" class="w-full" :loading="loading"></Button>
 
                     <div class="text-center mt-4 pb-10">
                         <span class="text-muted-color">Não tem conta? </span>
                         <Button label="Registre-se" link class="font-medium text-primary p-0" @click="goToRegister" />
+                        <br />
+                        <Tag icon="pi pi-home" value="Ir para o Início" @click="goToHome" class="cursor-pointer font-medium text-primary mt-8" style="background-color: transparent; border: none" />
                     </div>
                 </form>
             </div>
