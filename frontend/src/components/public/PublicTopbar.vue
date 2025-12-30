@@ -65,7 +65,7 @@ const navigateToHome = () => {
 };
 
 const navigateToAdvertiseField = () => {
-    router.push({ name: 'advertise-field' });
+    router.push({ name: 'anunciar-campo' });
 };
 
 const navigateToComoFunciona = () => {
@@ -119,7 +119,7 @@ const handleSearch = () => {
                         <a
                             href="#"
                             @click="navigateToAdvertiseField"
-                            :class="route.name === 'advertise-field' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
+                            :class="route.name === 'anunciar-campo' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                             >Anunciar seu campo</a
                         >
                     </nav>

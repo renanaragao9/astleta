@@ -44,4 +44,13 @@ router.beforeEach(async (to) => {
     return true;
 });
 
+router.afterEach((to) => {
+    if (to.meta.title) document.title = to.meta.title as string;
+
+    if (to.meta.description) {
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute('content', to.meta.description as string);
+    }
+});
+
 export default router;

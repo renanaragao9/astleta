@@ -19,27 +19,32 @@ import PublicFooter from '@/components/public/PublicFooter.vue';
 import PublicTopbar from '@/components/public/PublicTopbar.vue';
 
 useHead({
-    title: 'Anuncie Seu Campo Esportivo na SeuRacha - Plataforma de Reservas',
+    title: 'Sistema para Gestão de Society e Arenas | SeuRacha',
     meta: [
         {
             name: 'description',
-            content: 'Anuncie seu campo esportivo na SeuRacha e alcance milhares de atletas. Sistema completo de gestão de reservas, controle financeiro e avaliações para proprietários de campos.'
+            content: 'Sistema completo para donos de society e arenas esportivas. Controle reservas, financeiro, comandas e aumente sua receita com o SeuRacha.'
         },
         {
             name: 'keywords',
-            content: 'anunciar campo, reservas esportivas, gestão campos, SeuRacha, campos esportivos, reservas online, proprietários campos'
+            content:
+                'sistema para society, sistema para arena esportiva, gestão de campos de futebol, ' + 'software para quadra esportiva, sistema de reservas para society, ERP esportivo, ' + 'gerenciar campo de futebol, sistema para dono de society'
         },
-        { property: 'og:title', content: 'Anuncie Seu Campo Esportivo na SeuRacha - Plataforma de Reservas' },
+
+        // Open Graph
+        { property: 'og:title', content: 'Sistema para Gestão de Society e Arenas | SeuRacha' },
         {
             property: 'og:description',
-            content: 'Alcance milhares de atletas com seu campo esportivo na SeuRacha. Gestão automatizada de reservas e controle financeiro.'
+            content: 'Controle reservas, financeiro e comandas do seu society ou arena esportiva com um sistema simples e completo.'
         },
         { property: 'og:type', content: 'website' },
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'Anuncie Seu Campo Esportivo na SeuRacha' },
+
+        // Twitter
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Sistema para Donos de Society | SeuRacha' },
         {
             name: 'twitter:description',
-            content: 'Sistema completo para proprietários de campos esportivos anunciarem e gerenciarem reservas.'
+            content: 'Software completo para gerenciar society, quadras e arenas esportivas.'
         }
     ]
 });
@@ -208,8 +213,7 @@ const statistics = [
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-8">
                         <div class="space-y-4">
-                            <p class="text-lg text-gray-700 italic">Seja bem-vindo à família SeuRacha! Junte-se a milhares de proprietários que já estão faturando mais e gerenciando seus campos com eficiência.</p>
-                            <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">Transforme seu Campo em um <span class="text-primary-500">Negócio de Sucesso</span></h1>
+                            <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">Sistema Completo para Gestão de <span class="text-primary-500">Society e Arenas Esportivas</span></h1>
                             <p class="text-xl text-gray-600 leading-relaxed">Junte-se à maior plataforma de reserva de campos esportivos do país e maximize seus ganhos com tecnologia de ponta.</p>
                         </div>
 
@@ -333,10 +337,16 @@ const statistics = [
             </div>
         </section>
 
+        <div class="text-center py-8 bg-gray-50">
+            <Button @click="openPreRegistrationModal" class="!bg-primary-500 !border-primary-500 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Sou Dono de Arena, Quero Testar
+            </Button>
+        </div>
+
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Por que Escolher a SeuRacha?</h2>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Sistema de Gestão para Donos de Society e Arenas</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Oferecemos tudo que você precisa para transformar seu campo em um negócio próspero e bem-sucedido.</p>
                 </div>
 
@@ -352,6 +362,12 @@ const statistics = [
                             </div>
                         </template>
                     </Card>
+                </div>
+
+                <div class="text-center mt-12">
+                    <Button @click="openPreRegistrationModal" class="!bg-primary-500 !border-primary-500 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Quero Gerenciar Meu Society
+                    </Button>
                 </div>
             </div>
         </section>
@@ -462,7 +478,7 @@ const statistics = [
         <section class="py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Sistema de Comanda Digital</h2>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Sistema de Comanda Digital para Campos de Futebol</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Maximize seus lucros com nosso sistema completo de vendas integrado ao seu campo esportivo.</p>
                 </div>
 
@@ -553,10 +569,16 @@ const statistics = [
             </div>
         </section>
 
+        <div class="text-center py-8">
+            <Button @click="openPreRegistrationModal" class="!bg-primary-500 !border-primary-500 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Cadastrar Meu Campo Agora
+            </Button>
+        </div>
+
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Controle Financeiro Completo</h2>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Controle Financeiro para Arenas Esportivas e Quadras</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Gerencie todas as suas despesas e receitas de forma organizada e tenha controle total sobre suas finanças.</p>
                 </div>
 
@@ -653,6 +675,12 @@ const statistics = [
                 </div>
             </div>
         </section>
+
+        <div class="text-center py-8 bg-white">
+            <Button @click="openPreRegistrationModal" class="!bg-primary-500 !border-primary-500 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Quero Controlar Meu Financeiro
+            </Button>
+        </div>
 
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
             <div class="max-w-7xl mx-auto">
@@ -889,6 +917,10 @@ const statistics = [
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="sr-only">
+            <h2>Sistema para Gerenciar Society e Campos de Futebol</h2>
+            <p>O SeuRacha é um sistema online desenvolvido para donos de society, arenas esportivas, quadras de futebol, futsal e espaços esportivos que desejam automatizar reservas, controlar o financeiro e aumentar a ocupação dos horários.</p>
         </section>
         <PublicFooter />
     </div>

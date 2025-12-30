@@ -174,22 +174,26 @@ const installPWA = async () => {
 };
 
 useHead({
-    title: 'SeuRacha - Aluguel de Society, Campos para Racha e Arenas Esportivas',
+    title: 'Campos Society e Arenas para Racha | SeuRacha',
     meta: [
         {
             name: 'description',
-            content: 'Alugue society, reserve campos para racha e descubra arenas esportivas próximos a você. Quadras para futebol, vôlei, basquete e mais com a plataforma SeuRacha.'
+            content: 'Encontre campos society e arenas esportivas para racha perto de você. Reserve online quadras de futebol, futsal, vôlei e basquete com o SeuRacha.'
         },
+        { property: 'og:title', content: 'Campos Society e Arenas para Racha | SeuRacha' },
         {
-            name: 'keywords',
-            content:
-                'aluguel de society, campo para racha, arenas esportivas, campos, quadras, reserva de campos, ' +
-                'futebol, vôlei, basquete, esportes, racha de futebol, futsal, society, pelada, treino esportivo, ' +
-                'reserva de quadras, aluguel de campos, jogos de futebol, academia ao ar livre'
+            property: 'og:description',
+            content: 'Reserve campos society e arenas esportivas perto de você com rapidez e facilidade.'
         },
-        { property: 'og:title', content: 'SeuRacha - Aluguel de Society, Campos para Racha e Arenas Esportivas' },
-        { property: 'og:description', content: 'Alugue society e reserve campos para racha próximos a você. Descubra arenas esportivas com a plataforma SeuRacha.' },
-        { property: 'og:type', content: 'website' }
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://seuracha.com/campos' },
+        { property: 'og:image', content: 'https://seuracha.com/og/home.jpg' }
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: 'https://seuracha.com/campos'
+        }
     ]
 });
 </script>

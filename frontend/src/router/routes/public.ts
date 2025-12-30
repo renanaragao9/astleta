@@ -7,54 +7,52 @@ export const publicRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/pages/public/FieldsIndex.vue'),
         meta: { requiresAuth: false }
     },
-    {
-        path: '/arenas',
-        name: 'fields-index',
-        component: () => import('@/views/pages/public/FieldsIndex.vue'),
-        meta: { requiresAuth: false }
-    },
+
     {
         path: '/campos',
-        name: 'fields-index',
+        name: 'campos',
         component: () => import('@/views/pages/public/FieldsIndex.vue'),
         meta: { requiresAuth: false }
     },
+
     {
-        path: '/arena/:id',
-        name: 'field-detail',
-        component: () => import('@/views/pages/public/FieldDetail.vue'),
-        meta: { requiresAuth: false }
+        path: '/arenas',
+        redirect: '/campos'
     },
+
     {
         path: '/campo/:id',
-        name: 'field-detail',
+        name: 'campo-detalhe',
         component: () => import('@/views/pages/public/FieldDetail.vue'),
         meta: { requiresAuth: false }
     },
+
+    {
+        path: '/arena/:id',
+        redirect: (to) => `/campo/${to.params.id}`
+    },
+
     {
         path: '/empresa/:id',
-        name: 'company-profile',
+        name: 'empresa-perfil',
         component: () => import('@/views/pages/public/CompanyProfile.vue'),
         meta: { requiresAuth: false }
     },
-    {
-        path: '/compania/:id',
-        name: 'company-profile',
-        component: () => import('@/views/pages/public/CompanyProfile.vue'),
-        meta: { requiresAuth: false }
-    },
+
     {
         path: '/anunciar-campo',
-        name: 'advertise-field',
+        name: 'anunciar-campo',
         component: () => import('@/views/pages/public/AdvertiseField.vue'),
         meta: { requiresAuth: false }
     },
+
     {
         path: '/como-funciona',
         name: 'como-funciona',
         component: () => import('@/views/pages/public/HowItWorks.vue'),
         meta: { requiresAuth: false }
     },
+
     {
         path: '/baa',
         name: 'baa',
