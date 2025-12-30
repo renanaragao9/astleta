@@ -101,20 +101,21 @@ const handleSearch = () => {
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center space-x-8">
                     <div class="flex-shrink-0 cursor-pointer" @click="navigateToHome">
-                        <div class="flex items-center space-x-2">
-                            <i class="pi pi-shield text-primary text-8xl"></i>
-                            <span class="text-2xl font-bold text-gray-900">SeuRacha</span>
+                        <div class="flex-shrink-0 cursor-pointer">
+                            <div class="flex items-center space-x-2">
+                                <i class="pi pi-shield text-primary-500 dark:text-primary-400" style="font-size: 1.5rem"></i>
+                                <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">SeuRacha</span>
+                            </div>
                         </div>
                     </div>
 
                     <nav class="hidden md:flex space-x-8">
                         <a href="/" :class="route.name === 'home' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'">Início</a>
-                        <a href="#" @click="navigateToComoFunciona" :class="route.name === 'como-funciona' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
-                            >Como Funciona</a
-                        >
-
                         <a href="#" @click="navigateToBAA" :class="route.name === 'baa' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                             >BAA - Boletim do Atleta Amador</a
+                        >
+                        <a href="#" @click="navigateToComoFunciona" :class="route.name === 'como-funciona' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
+                            >Como Funciona</a
                         >
                         <a
                             href="#"

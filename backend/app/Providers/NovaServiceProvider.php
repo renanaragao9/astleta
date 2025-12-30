@@ -11,6 +11,7 @@ use App\Nova\Company;
 use App\Nova\Contact;
 use App\Nova\ContactType;
 use App\Nova\Coupon;
+use App\Nova\Dashboards\Main;
 use App\Nova\Document;
 use App\Nova\DocumentType;
 use App\Nova\Expense;
@@ -76,6 +77,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         Nova::mainMenu(function (): array {
             return [
+                MenuSection::dashboard(Main::class)->icon('chart-bar'),
+
                 MenuSection::make('Autenticação', [
                     MenuItem::resource(Profile::class),
                     MenuItem::resource(Permission::class),

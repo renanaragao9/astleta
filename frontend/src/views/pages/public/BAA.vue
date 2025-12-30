@@ -3,7 +3,6 @@ import { ref, reactive, onMounted, watch } from 'vue';
 import { useHead } from '@vueuse/head';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
-import InputText from 'primevue/inputtext';
 import Dialog from 'primevue/dialog';
 import Badge from 'primevue/badge';
 import Tag from 'primevue/tag';
@@ -94,12 +93,6 @@ const viewAthleteProfile = (athlete: AthleteProfile) => {
     showProfileDialog.value = true;
 };
 
-const clearSearch = () => {
-    searchForm.name = '';
-    baaStore.currentPage = 1;
-    searchAthletes();
-};
-
 const getDominantSideLabel = (side?: string) => {
     switch (side) {
         case 'esquerdo':
@@ -140,6 +133,7 @@ watch(
     () => baaStore.currentPage,
     () => {
         searchAthletes();
+        window.scrollTo(0, 0);
     }
 );
 
@@ -162,146 +156,118 @@ onMounted(() => {
     <div class="min-h-screen bg-gray-50">
         <PublicTopbar />
 
-        <section class="bg-primary text-white py-20">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <div class="inline-flex items-center bg-white text-gray-900 text-sm font-medium px-4 py-2 rounded-full mb-6">
-                        <i class="pi pi-search mr-2"></i>
-                        Boletim do Atleta Amador - BAA
+        <div class="relative dark:via-primary/10 dark:to-gray-900 py-12 border-b border-primary/10 dark:border-primary/20">
+            <div class="absolute inset-0 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"></div>
+            <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">Encontre Atletas da Sua Região</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma SeuRacha.</p>
+                </div>
+
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 shadow-lg border border-primary/20 dark:border-primary/30 overflow-hidden hover:shadow-xl transition-shadow duration-300 rounded-3xl flex items-center">
+                        <div class="relative flex-1 w-full">
+                            <i class="pi pi-search absolute left-6 top-1/2 transform -translate-y-1/2 text-primary text-lg z-10"></i>
+                            <input
+                                v-model="searchForm.name"
+                                @keyup.enter="performSearch"
+                                type="text"
+                                placeholder="Buscar por nome ou ID público do atleta..."
+                                class="w-full pl-14 pr-4 py-4 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 border-0 focus:outline-none focus:ring-0 bg-transparent text-lg"
+                            />
+                        </div>
+                        <button
+                            @click="performSearch"
+                            :disabled="baaStore.loading"
+                            class="flex bg-primary hover:bg-primary-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-8 py-4 font-semibold transition-colors duration-200 items-center justify-center gap-2"
+                        >
+                            <i :class="baaStore.loading ? 'pi pi-spin pi-spinner text-lg' : 'pi pi-search text-lg'"></i>
+                            <span class="hidden sm:inline">{{ baaStore.loading ? 'Buscando...' : 'Buscar' }}</span>
+                        </button>
                     </div>
-                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                        Encontre Atletas
-                        <span class="text-white">da Sua Região</span>
-                    </h1>
-                    <p class="text-xl text-white leading-relaxed mb-8 max-w-3xl mx-auto">Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma SeuRacha.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-8xl mx-auto">
-                    <Card class="!shadow-lg !border-0">
-                        <template #content>
-                            <div class="space-y-6">
-                                <div class="flex flex-col sm:flex-row gap-6 items-end">
-                                    <div class="flex-1 w-full">
-                                        <label for="search-name" class="block text-sm font-medium text-gray-700 mb-2">Buscar por nome ou Id público</label>
-                                        <InputText
-                                            id="search-name"
-                                            v-model="searchForm.name"
-                                            placeholder="Digite o nome ou ID público do atleta..."
-                                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
-                                            @keyup.enter="performSearch"
-                                        />
-                                    </div>
-                                    <div class="flex gap-3 w-full sm:w-auto">
-                                        <Button
-                                            @click="performSearch"
-                                            :loading="baaStore.loading"
-                                            class="w-full sm:w-auto px-6 py-3 bg-blue-600 border-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
-                                        >
-                                            <i class="pi pi-search mr-2"></i>
-                                            Buscar
-                                        </Button>
-                                        <Button @click="clearSearch" severity="secondary" outlined class="w-full sm:w-auto px-6 py-3 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition-all duration-200">
-                                            <i class="pi pi-times mr-2"></i>
-                                            Limpar
-                                        </Button>
-                                    </div>
-                                </div>
+        <main class="mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div v-if="baaStore.loading" class="text-center py-16">
+                <i class="pi pi-spin pi-spinner text-4xl text-primary mb-4"></i>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Buscando atletas...</p>
+            </div>
 
-                                <div v-if="baaStore.loading" class="text-center py-8">
-                                    <i class="pi pi-spin pi-spinner text-7xl text-gray-400 mb-4 leading-none"></i>
-                                    <p class="text-gray-600">Carregando atletas...</p>
-                                </div>
+            <div v-else-if="!baaStore.hasAthletes" class="text-center py-16">
+                <i class="pi pi-users text-6xl text-gray-300 dark:text-gray-600 mb-6"></i>
+                <h3 class="text-2xl font-bold text-gray-700 dark:text-gray-200 mb-4">Nenhum atleta encontrado</h3>
+                <p class="text-gray-600 dark:text-gray-300">Tente novamente com outros termos de busca.</p>
+            </div>
 
-                                <div v-else-if="!baaStore.hasAthletes" class="text-center py-12">
-                                    <i class="pi pi-users text-7xl text-gray-300 mb-4"></i>
-                                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Nenhum atleta encontrado</h3>
-                                </div>
+            <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                <div
+                    v-for="athlete in baaStore.athletes"
+                    :key="athlete.id"
+                    class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer hover:scale-105"
+                    @click="viewAthleteProfile(athlete)"
+                >
+                    <div class="relative h-56 overflow-hidden">
+                        <img :src="getProfileImage(athlete.user.image)" :alt="athlete.user.name" class="w-full h-full object-contain transition-transform duration-300 hover:scale-110" />
+                    </div>
 
-                                <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                    <Card
-                                        v-for="athlete in baaStore.athletes"
-                                        :key="athlete.id"
-                                        class="h-full flex flex-col border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105"
-                                        @click="viewAthleteProfile(athlete)"
-                                    >
-                                        <template #content>
-                                            <div class="p-6 space-y-6 flex-grow">
-                                                <div class="flex items-center space-x-6">
-                                                    <img :src="getProfileImage(athlete.user.image)" :alt="athlete.user.name" class="w-16 h-16 rounded-full object-cover flex-shrink-0" />
-                                                    <div class="flex-grow min-w-0">
-                                                        <h3 class="font-bold text-xl text-gray-900 truncate">
-                                                            {{ athlete.user.name }}
-                                                        </h3>
-                                                    </div>
-                                                </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 flex items-center">
+                            <i class="pi pi-id-card mr-2 text-primary"></i>
+                            {{ athlete.user.name }}
+                        </h3>
 
-                                                <div class="space-y-4">
-                                                    <div v-if="athlete.sport" class="flex items-center justify-between">
-                                                        <span class="text-base text-gray-600 font-medium">Esporte:</span>
-                                                        <Tag :value="athlete.sport.name" severity="primary" class="text-sm" />
-                                                    </div>
-
-                                                    <div v-if="athlete.position" class="flex items-center justify-between">
-                                                        <span class="text-base text-gray-600 font-medium">Posição:</span>
-                                                        <span class="text-base font-semibold">{{ athlete.position.name }}</span>
-                                                    </div>
-
-                                                    <div v-if="athlete.subposition" class="flex items-center justify-between">
-                                                        <span class="text-base text-gray-600 font-medium">Subposição:</span>
-                                                        <span class="text-base text-gray-500">{{ athlete.subposition.name }}</span>
-                                                    </div>
-
-                                                    <div class="flex items-center justify-between">
-                                                        <span class="text-base text-gray-600 font-medium">Time:</span>
-                                                        <div class="text-base font-semibold text-gray-700">
-                                                            <div v-if="athlete.team" class="flex items-center space-x-2">
-                                                                <img v-if="athlete.team.shieldPath" :src="athlete.team.shieldPath" alt="Escudo" class="w-6 h-6 object-contain" />
-                                                                <span class="text-base font-semibold">{{ athlete.team.name }}</span>
-                                                            </div>
-                                                            <span v-else class="text-gray-500">-</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="flex justify-between items-center pt-4 border-t border-gray-200">
-                                                    <div class="text-sm text-gray-500 font-medium">
-                                                        {{ athlete.dominantSide ? getDominantSideLabel(athlete.dominantSide) : '-' }}
-                                                    </div>
-                                                    <Button icon="pi pi-eye" text severity="primary" size="large" @click.stop="viewAthleteProfile(athlete)" class="p-3" />
-                                                </div>
-                                            </div>
-                                        </template>
-                                    </Card>
-                                </div>
+                        <div class="mb-4 space-y-3">
+                            <div v-if="athlete.sport" class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Esporte:</span>
+                                <Tag :value="athlete.sport.name" severity="primary" class="text-sm" />
                             </div>
-                            <div class="flex justify-center items-center space-x-2 mt-12">
-                                <Button label="Anterior" icon="pi pi-chevron-left" @click="baaStore.currentPage = Math.max(1, baaStore.currentPage - 1)" :disabled="baaStore.currentPage === 1" outlined />
-                                <Button
-                                    v-for="page in Array.from({ length: baaStore.pagination.lastPage }, (_, i) => i + 1)"
-                                    :key="page"
-                                    :label="page.toString()"
-                                    @click="baaStore.currentPage = page"
-                                    :outlined="baaStore.currentPage !== page"
-                                    :class="baaStore.currentPage === page ? 'bg-primary text-white' : 'text-gray-700 dark:text-gray-200'"
-                                    class="w-10 h-10"
-                                />
-                                <Button
-                                    label="Próxima"
-                                    icon="pi pi-chevron-right"
-                                    @click="baaStore.currentPage = Math.min(baaStore.pagination.lastPage, baaStore.currentPage + 1)"
-                                    :disabled="baaStore.currentPage === baaStore.pagination.lastPage"
-                                    outlined
-                                />
+                            <div v-if="athlete.position" class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Posição:</span>
+                                <Tag :value="athlete.position.name" severity="success" class="text-sm" />
                             </div>
-                        </template>
-                    </Card>
+                            <div v-if="athlete.team" class="flex items-center text-gray-600 dark:text-gray-300 text-sm">
+                                <i class="pi pi-users mr-2 text-primary"></i>
+                                <span>{{ athlete.team.name }}</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Lado Dominante:</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-200">{{ getDominantSideLabel(athlete.dominantSide) }}</span>
+                            </div>
+                            <div v-if="athlete.height || athlete.weight" class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-300 font-medium">Altura/Peso:</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-200">
+                                    <span v-if="athlete.height">{{ athlete.height }}m</span>
+                                    <span v-if="athlete.height && athlete.weight"> / </span>
+                                    <span v-if="athlete.weight">{{ athlete.weight }}kg</span>
+                                </span>
+                            </div>
+                            <div v-if="athlete.rating" class="flex items-center text-gray-600 dark:text-gray-300 text-sm">
+                                <i class="pi pi-star mr-2 text-primary"></i>
+                                <span>{{ athlete.rating.toFixed(1) }}</span>
+                            </div>
+                        </div>
+
+                        <Button label="Ver Perfil" icon="pi pi-eye" @click.stop="viewAthleteProfile(athlete)" class="w-full bg-primary text-white hover:bg-primary-600" />
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <div v-if="baaStore.pagination.lastPage > 1" class="flex justify-center items-center space-x-2 mt-12">
+                <Button label="Anterior" icon="pi pi-chevron-left" @click="baaStore.currentPage = Math.max(1, baaStore.currentPage - 1)" :disabled="baaStore.currentPage === 1" outlined />
+                <Button
+                    v-for="page in Array.from({ length: baaStore.pagination.lastPage }, (_, i) => i + 1)"
+                    :key="page"
+                    :label="page.toString()"
+                    @click="baaStore.currentPage = page"
+                    :outlined="baaStore.currentPage !== page"
+                    :class="baaStore.currentPage === page ? 'bg-primary text-white' : 'text-gray-700 dark:text-gray-200'"
+                    class="w-10 h-10"
+                />
+                <Button label="Próxima" icon="pi pi-chevron-right" @click="baaStore.currentPage = Math.min(baaStore.pagination.lastPage, baaStore.currentPage + 1)" :disabled="baaStore.currentPage === baaStore.pagination.lastPage" outlined />
+            </div>
+        </main>
 
         <Dialog v-model:visible="showProfileDialog" modal header="Perfil do Atleta" :style="{ width: '90vw', maxWidth: '1000px' }" :breakpoints="{ '960px': '95vw' }">
             <div v-if="baaStore.selectedAthlete" class="space-y-6">

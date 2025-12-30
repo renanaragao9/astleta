@@ -498,7 +498,7 @@ function addTabItem(tabData: Tab): void {
         toast.add({
             severity: 'warn',
             summary: 'Atenção',
-            detail: 'Não é possível adicionar itens a comandas fechadas ou canceladas',
+            detail: 'Não é possível adicionar produtos a comandas fechadas ou canceladas',
             life: 3000
         });
         return;
@@ -793,7 +793,7 @@ function applyFilters(): void {
                             <Column :exportable="false" style="min-width: 16rem">
                                 <template #body="slotProps">
                                     <Button icon="pi pi-eye" v-tooltip.top="'Ver Detalhes'" rounded outlined severity="info" class="mr-2" @click="viewTabDetails(slotProps.data)" />
-                                    <Button icon="pi pi-plus" v-tooltip.top="'Adicionar Item'" rounded outlined class="mr-2" @click="addTabItem(slotProps.data)" :disabled="!tabStore.canEditTab(slotProps.data.status)" />
+                                    <Button icon="pi pi-plus" v-tooltip.top="'Adicionar Produto'" rounded outlined class="mr-2" @click="addTabItem(slotProps.data)" :disabled="!tabStore.canEditTab(slotProps.data.status)" />
                                     <Button icon="pi pi-pencil" v-tooltip.top="'Editar'" rounded outlined class="mr-2" @click="openUpdateTab(slotProps.data)" :disabled="!tabStore.canEditTab(slotProps.data.status)" />
                                     <Button
                                         icon="pi pi-check"
@@ -933,9 +933,9 @@ function applyFilters(): void {
                                         <div class="pt-3 border-t border-gray-100 dark:border-gray-700">
                                             <div class="text-xs font-sans text-gray-500 dark:text-gray-400 mb-2 text-center">{{ tab.tabItems?.length || 0 }} item(s)</div>
                                             <div class="grid grid-cols-1 gap-2 font-sans">
-                                                <Button label="Ver Detalhes" size="small" outlined severity="info" class="w-full font-sans text-xs" @click="viewTabDetails(tab)" />
-                                                <Button label="Adicionar Item" size="small" outlined class="w-full font-sans text-xs" @click="addTabItem(tab)" :disabled="!tabStore.canEditTab(tab.status)" />
-                                                <Button label="Editar" size="small" outlined class="w-full font-sans text-xs" @click="openUpdateTab(tab)" :disabled="!tabStore.canEditTab(tab.status)" />
+                                                <Button label="Ver Detalhes da Comanda" size="small" outlined severity="info" class="w-full font-sans text-xs" @click="viewTabDetails(tab)" />
+                                                <Button label="Adicionar Produto" size="small" outlined class="w-full font-sans text-xs" @click="addTabItem(tab)" :disabled="!tabStore.canEditTab(tab.status)" />
+                                                <Button label="Editar Comanda" size="small" outlined class="w-full font-sans text-xs" @click="openUpdateTab(tab)" :disabled="!tabStore.canEditTab(tab.status)" />
                                                 <Button
                                                     label="Fechar Comanda"
                                                     size="small"
@@ -1051,7 +1051,7 @@ function applyFilters(): void {
                             <i class="pi pi-info-circle text-blue-500" style="font-size: 2rem" />
                             <span class="text-lg text-center">
                                 Tem certeza que deseja fechar a comanda <b>{{ tabStore.tab.code }}</b
-                                >? Após fechada, não será possível adicionar ou editar itens.
+                                >? Após fechada, não será possível adicionar ou editar produtos.
                             </span>
                         </div>
 
@@ -1145,7 +1145,7 @@ function applyFilters(): void {
                     </template>
                 </Dialog>
 
-                <Dialog v-model:visible="dialogState.tabItemDialog" modal header="Adicionar Item à Comanda" :style="{ width: '40vw' }" :breakpoints="{ '960px': '75vw', '640px': '100vw' }" :maximizable="true">
+                <Dialog v-model:visible="dialogState.tabItemDialog" modal header="Adicionar Produto à Comanda" :style="{ width: '40vw' }" :breakpoints="{ '960px': '75vw', '640px': '100vw' }" :maximizable="true">
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
                         <div class="col-span-12">
                             <label for="product" class="flex items-center justify-between font-medium mb-2">

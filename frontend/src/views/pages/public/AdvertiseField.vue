@@ -18,35 +18,41 @@ import type { PreCompaniesRegistrationRequest } from '@/types/public/preCompanie
 import PublicFooter from '@/components/public/PublicFooter.vue';
 import PublicTopbar from '@/components/public/PublicTopbar.vue';
 
+const landingShare = {
+    url: 'https://seuracha.com/anunciar-campo',
+    title: 'SeuRacha | Gestão e Reservas para Society',
+    text: 'Aumente a ocupação e a receita do seu society com reservas online, comandas digitais e controle financeiro em um só lugar.'
+};
+
 useHead({
     title: 'Sistema para Gestão de Society e Arenas | SeuRacha',
     meta: [
         {
             name: 'description',
-            content: 'Sistema completo para donos de society e arenas esportivas. Controle reservas, financeiro, comandas e aumente sua receita com o SeuRacha.'
+            content: 'Aumente a ocupação em até 38% e cresça o faturamento com reservas online, comandas digitais e controle financeiro completo para societies e arenas.'
         },
         {
             name: 'keywords',
             content:
-                'sistema para society, sistema para arena esportiva, gestão de campos de futebol, ' + 'software para quadra esportiva, sistema de reservas para society, ERP esportivo, ' + 'gerenciar campo de futebol, sistema para dono de society'
+                'sistema para society, sistema para arena esportiva, gestão de campos de futebol, software para quadra esportiva, sistema de reservas para society, ERP esportivo, gerenciar campo de futebol, sistema para dono de society, comanda digital, controle financeiro arena'
         },
-
-        // Open Graph
         { property: 'og:title', content: 'Sistema para Gestão de Society e Arenas | SeuRacha' },
         {
             property: 'og:description',
-            content: 'Controle reservas, financeiro e comandas do seu society ou arena esportiva com um sistema simples e completo.'
+            content: 'Aumente ocupação, vendas de bar e controle financeiro com o SeuRacha. Reservas online, comandas digitais e dashboards em um único painel.'
         },
         { property: 'og:type', content: 'website' },
-
-        // Twitter
+        { property: 'og:url', content: landingShare.url },
+        { property: 'og:image', content: 'https://seuracha.com/share/og-anunciar-campo.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Sistema para Donos de Society | SeuRacha' },
         {
             name: 'twitter:description',
             content: 'Software completo para gerenciar society, quadras e arenas esportivas.'
-        }
-    ]
+        },
+        { name: 'twitter:image', content: 'https://seuracha.com/share/og-anunciar-campo.jpg' }
+    ],
+    link: [{ rel: 'canonical', href: landingShare.url }]
 });
 
 const preRegistrationStore = usePreCompaniesRegistrationStore();
@@ -124,34 +130,34 @@ const submitForm = async () => {
 
 const features = [
     {
-        icon: 'pi pi-users',
-        title: 'Alcance Milhares de Atletas',
-        description: 'Conecte-se com uma comunidade ativa de jogadores procurando por campos de qualidade na sua região.'
+        icon: 'pi pi-calendar-plus',
+        title: 'Reservas com disponibilidade real',
+        description: 'Agenda inteligente com checagem automática, cálculo de preço por horário e extra-hour opcional.'
     },
     {
-        icon: 'pi pi-calendar',
-        title: 'Gestão Automática de Reservas',
-        description: 'Sistema completo para gerenciar horários e reservas de forma automatizada e organizada.'
+        icon: 'pi pi-whatsapp',
+        title: 'Envie reservas em 1 clique',
+        description: 'Compartilhe por WhatsApp, email ou sistema e confirme o pagamento presencial ou online.'
+    },
+    {
+        icon: 'pi pi-receipt',
+        title: 'Comandas conectadas à reserva',
+        description: 'Itens de bar vinculados ao jogo, com status da comanda e fechamento seguro por forma de pagamento.'
+    },
+    {
+        icon: 'pi pi-warehouse',
+        title: 'Estoque, compras e fornecedores',
+        description: 'Controle de produtos, armazéns, notas de compra e reposição rápida para não perder venda.'
     },
     {
         icon: 'pi pi-chart-line',
-        title: 'Aumente sua Receita',
-        description: 'Otimize a ocupação do seu campo e maximize seus ganhos com nossa plataforma inteligente.'
+        title: 'Relatório financeiro unificado',
+        description: 'Receitas, despesas, taxas e projeções em um dashboard exportável para sócios e contabilidade.'
     },
     {
-        icon: 'pi pi-shield',
-        title: 'Controle de Reservas',
-        description: 'Tenha controle total sobre suas reservas e receba pagamentos diretamente no seu estabelecimento.'
-    },
-    {
-        icon: 'pi pi-desktop',
-        title: 'Plataforma Web Completa',
-        description: 'Gerencie seu negócio onde estiver através de nossa plataforma web responsiva e intuitiva.'
-    },
-    {
-        icon: 'pi pi-star',
-        title: 'Avaliações e Feedback',
-        description: 'Construa sua reputação com o sistema de avaliações e melhore continuamente seus serviços.'
+        icon: 'pi pi-trophy',
+        title: 'Torneios e times',
+        description: 'Cadastre torneios públicos ou privados, times inscritos e pontuação para engajar a comunidade.'
     }
 ];
 
@@ -176,7 +182,7 @@ const testimonials = [
 const faqs = [
     {
         question: 'Quanto custa para anunciar meu campo?',
-        answer: 'Nossa plataforma trabalha com um modelo de comissão por reserva realizada. Você só paga quando ganha!'
+        answer: 'Você paga apenas 1.8% por reserva concluída. Sem mensalidade e sem multa para sair.'
     },
     {
         question: 'Como funciona o sistema de reservas?',
@@ -198,10 +204,43 @@ const faqs = [
 
 const statistics = [
     { number: '100+', label: 'Tipos de campos*' },
-    { number: '0', label: 'Sem taxas' },
+    { number: '1.8%', label: 'por reserva concluída' },
     { number: '95%', label: 'Satisfação dos Proprietários' },
     { number: '24h', label: 'Suporte Disponível' }
 ];
+
+const performanceHighlights = [
+    { value: '+38%', label: 'ocupação média em 90 dias', detail: 'Resultado médio dos campos que ativam reservas online e bloqueios inteligentes.' },
+    { value: '2.4x', label: 'mais vendas de bar', detail: 'Ticket médio sobe com comandas digitais ligadas às reservas.' },
+    { value: '12min', label: 'tempo salvo por reserva', detail: 'Automação de confirmação, cobrança e comunicação com o time.' },
+    { value: '1.8%', label: 'por reserva', detail: 'Sem mensalidade. Cobramos somente quando a reserva é concluída.' }
+];
+
+const roiBullets = [
+    'Calendário público que aparece no Google em menos de 7 dias',
+    'Dashboard de metas semanais com alertas de ocupação baixa',
+    'Comandas conectadas à reserva para reduzir calote e perda de produtos',
+    'Relatórios exportáveis para sócios e contabilidade em um clique'
+];
+
+const shareLanding = async () => {
+    try {
+        if (typeof navigator !== 'undefined' && navigator.share) {
+            await navigator.share({ title: landingShare.title, text: landingShare.text, url: landingShare.url });
+            return;
+        }
+
+        if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(landingShare.url);
+            toast.add({ severity: 'info', summary: 'Link copiado', detail: 'Envie para sócios ou parceiros agora.', life: 3500 });
+            return;
+        }
+
+        toast.add({ severity: 'warn', summary: 'Compartilhe', detail: landingShare.url, life: 3500 });
+    } catch {
+        toast.add({ severity: 'warn', summary: 'Não foi possível compartilhar', detail: landingShare.url, life: 4000 });
+    }
+};
 </script>
 
 <template>
@@ -262,8 +301,8 @@ const statistics = [
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                                         <h4 class="text-lg font-semibold text-gray-800">Taxas do Sistema</h4>
-                                        <div class="text-3xl font-bold text-blue-600 mt-2">0</div>
-                                        <div class="text-sm text-gray-600 mt-1">Valor mensal</div>
+                                        <div class="text-3xl font-bold text-blue-600 mt-2">1.8%</div>
+                                        <div class="text-sm text-gray-600 mt-1">Por reserva concluída. Sem mensalidade.</div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                                         <h4 class="text-lg font-semibold text-gray-800">Saldo</h4>
@@ -337,6 +376,99 @@ const statistics = [
             </div>
         </section>
 
+        <section class="relative overflow-hidden bg-slate-900 text-white px-4 sm:px-6 lg:px-8 py-16">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-emerald-400/10 to-transparent"></div>
+            <div class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-emerald-400/20 blur-3xl"></div>
+            <div class="absolute -left-12 bottom-0 h-56 w-56 rounded-full bg-white/5 blur-3xl"></div>
+
+            <div class="relative max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-emerald-100 text-sm font-semibold backdrop-blur">
+                        <i class="pi pi-bolt mr-2"></i>
+                        Resultados em 90 dias ou menos
+                    </p>
+                    <h2 class="text-3xl lg:text-5xl font-bold leading-tight text-white">Ganhe tração real com dados e automação</h2>
+                    <p class="text-lg text-slate-100/80 max-w-2xl">Mostramos o que importa: mais ocupação, mais vendas de bar e menos tempo perdido com confirmação manual.</p>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div v-for="item in performanceHighlights" :key="item.label" class="rounded-xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                            <div class="text-2xl font-bold text-emerald-300">{{ item.value }}</div>
+                            <div class="text-sm font-semibold text-white">{{ item.label }}</div>
+                            <p class="text-sm text-slate-100/70 mt-2">{{ item.detail }}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="rounded-xl bg-white text-slate-900 p-5 shadow-2xl">
+                            <h3 class="text-lg font-semibold mb-3">O que você passa a ganhar</h3>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li v-for="point in roiBullets" :key="point" class="flex items-start gap-2">
+                                    <i class="pi pi-check-circle text-emerald-600 mt-1"></i>
+                                    <span>{{ point }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl border border-white/10 bg-white/5 p-5 shadow-xl">
+                            <h3 class="text-lg font-semibold text-white mb-3">Pronto para compartilhar</h3>
+                            <p class="text-sm text-slate-100/80">Envie o link do seu campo para sócios ou parceiros e comece a receber reservas em minutos.</p>
+                            <div class="flex flex-wrap gap-3 mt-4">
+                                <Button @click="shareLanding" class="!bg-white !text-emerald-600 !border-white">
+                                    <i class="pi pi-share-alt mr-2"></i>
+                                    Compartilhar link
+                                </Button>
+                                <Button as="a" href="https://wa.me/5585921674573?text=Quero+colocar+meu+campo+no+SeuRacha" target="_blank" class="!bg-emerald-500 !border-emerald-400 !text-white">
+                                    <i class="pi pi-whatsapp mr-2"></i>
+                                    Falar com especialista
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl bg-white/5 border border-white/10 p-8 shadow-2xl backdrop-blur">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-sm text-slate-100/70">Mapa de receita</p>
+                            <h3 class="text-2xl font-bold text-white">Previsão semanal</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-xs font-semibold">Live</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-100/80">Ocupação média</span>
+                            <span class="text-xl font-semibold text-emerald-300">82%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-2 bg-gradient-to-r from-emerald-400 to-emerald-300" style="width: 82%"></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-100/80">Faturamento previsto</span>
+                            <span class="text-xl font-semibold text-white">R$ 14.200</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-lg bg-white/5 border border-white/10 p-3">
+                                <p class="text-xs text-slate-100/70">Bar / Comanda</p>
+                                <p class="text-lg font-semibold text-white">R$ 4.800</p>
+                                <p class="text-xs text-emerald-200">+2.1x vs último mês</p>
+                            </div>
+                            <div class="rounded-lg bg-white/5 border border-white/10 p-3">
+                                <p class="text-xs text-slate-100/70">Reservas online</p>
+                                <p class="text-lg font-semibold text-white">R$ 9.400</p>
+                                <p class="text-xs text-emerald-200">+31% com calendário público</p>
+                            </div>
+                        </div>
+                        <div class="rounded-lg bg-white text-slate-900 p-4 shadow-xl mt-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-semibold">Slot mais rentável</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">Sexta 20h</span>
+                            </div>
+                            <p class="text-sm text-slate-700 mt-2">R$ 420,00 de ticket médio e fila de espera de 6 times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="text-center py-8 bg-gray-50">
             <Button @click="openPreRegistrationModal" class="!bg-primary-500 !border-primary-500 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
                 Sou Dono de Arena, Quero Testar
@@ -384,29 +516,29 @@ const statistics = [
                         <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
                             <i class="pi pi-calendar-plus text-primary-500 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Agendamento Inteligente</h3>
-                        <p class="text-gray-600">Configure horários disponíveis para cada campo e gerencie reservas automaticamente.</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Disponibilidade em tempo real</h3>
+                        <p class="text-gray-600">Agenda por dia da semana, checagem de conflito e cálculo automático de preço e hora extra.</p>
                     </div>
                     <div class="text-center space-y-4">
                         <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
-                            <i class="pi pi-check-circle text-primary-500 text-2xl"></i>
+                            <i class="pi pi-send text-primary-500 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Controle de Reservas</h3>
-                        <p class="text-gray-600">Acompanhe todas as reservas em tempo real, com status e informações detalhadas.</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Envio de reservas</h3>
+                        <p class="text-gray-600">Confirme e envie reservas por WhatsApp, email ou sistema com histórico e status.</p>
                     </div>
                     <div class="text-center space-y-4">
                         <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
-                            <i class="pi pi-map-marker text-primary-500 text-2xl"></i>
+                            <i class="pi pi-receipt text-primary-500 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Múltiplos Campos</h3>
-                        <p class="text-gray-600">Gerencie vários campos simultaneamente, com tipos, tamanhos e características específicas.</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Comanda ligada ao jogo</h3>
+                        <p class="text-gray-600">Itens de bar por reserva, fechamento por forma de pagamento e envio do recibo.</p>
                     </div>
                     <div class="text-center space-y-4">
                         <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
-                            <i class="pi pi-clock text-primary-500 text-2xl"></i>
+                            <i class="pi pi-warehouse text-primary-500 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Horários Flexíveis</h3>
-                        <p class="text-gray-600">Defina horários personalizados por dia da semana e campo, com bloqueios manuais.</p>
+                        <h3 class="text-xl font-semibold text-gray-900">Estoque e compras</h3>
+                        <p class="text-gray-600">Produtos, armazéns, notas de compra e fornecedores para não faltar item no bar.</p>
                     </div>
                 </div>
 
@@ -817,8 +949,8 @@ const statistics = [
                                     <div class="grid grid-cols-4 gap-2 text-sm py-2">
                                         <div><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Taxa</span></div>
                                         <div class="font-medium">Taxa do Sistema</div>
-                                        <div class="font-medium text-blue-600">R$ 0,00</div>
-                                        <div><span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Pago</span></div>
+                                        <div class="font-medium text-blue-600">1.8% por reserva</div>
+                                        <div><span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Sem mensalidade</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -914,6 +1046,10 @@ const statistics = [
                             <i class="pi pi-plus mr-2"></i>
                             Cadastrar Agora
                         </Button>
+                        <Button @click="shareLanding" class="!bg-primary-700 !border-primary-700 !text-white !px-8 !py-4 !text-lg font-semibold hover:!bg-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="pi pi-share-alt mr-2"></i>
+                            Enviar para meu sócio
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -979,6 +1115,14 @@ const statistics = [
     background-color: #059669;
 }
 
+.bg-primary-700 {
+    background-color: #047857;
+}
+
+.bg-primary-800 {
+    background-color: #065f46;
+}
+
 .bg-primary-50 {
     background-color: #ecfdf5;
 }
@@ -993,6 +1137,14 @@ const statistics = [
 
 .border-primary-500 {
     border-color: #10b981;
+}
+
+.border-primary-700 {
+    border-color: #047857;
+}
+
+.border-primary-800 {
+    border-color: #065f46;
 }
 
 .hover\:bg-primary-600:hover {
