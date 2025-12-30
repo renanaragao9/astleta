@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://astleta.com/sitemap.xml
+Sitemap: https://seuracha.com/sitemap.xml

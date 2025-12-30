@@ -397,7 +397,7 @@ watch(selectedDate, (newDate) => {
     }
 });
 
-const pageTitle = computed(() => (field.value ? `${field.value.name} - Astleta` : 'Detalhes do Campo - Astleta'));
+const pageTitle = computed(() => (field.value ? `${field.value.name} - SeuRacha` : 'Detalhes do Campo - SeuRacha'));
 const pageDescription = computed(() => (field.value ? `Reserve ${field.value.name} na ${field.value.company.name}. ${field.value.description || 'Campo esportivo disponível para reserva.'}` : 'Detalhes do campo esportivo.'));
 
 useHead({

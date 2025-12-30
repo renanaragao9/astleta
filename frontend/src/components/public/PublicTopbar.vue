@@ -104,7 +104,7 @@ const handleSearch = () => {
                     <div class="flex-shrink-0 cursor-pointer" @click="navigateToHome">
                         <div class="flex items-center space-x-2">
                             <i class="pi pi-shield text-primary text-8xl"></i>
-                            <span class="text-2xl font-bold text-gray-900">Astleta</span>
+                            <span class="text-2xl font-bold text-gray-900">SeuRacha</span>
                         </div>
                     </div>
 

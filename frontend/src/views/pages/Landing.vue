@@ -14,12 +14,12 @@ const logout = async () => {
 <template>
     <div class="min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 flex flex-col items-center justify-center text-white">
         <header class="mb-10 text-center">
-            <h1 class="text-5xl font-bold mb-4">Astleta</h1>
+            <h1 class="text-5xl font-bold mb-4">SeuRacha</h1>
             <p class="text-xl max-w-2xl mx-auto">Acompanhe o futebol de forma simples, divertida e moderna. Resultados, estatísticas e muito mais em um só lugar!</p>
         </header>
         <main class="flex flex-col items-center w-full max-w-2xl">
             <section class="bg-white bg-opacity-10 rounded-xl p-8 shadow-lg mb-8 w-full">
-                <h2 class="text-2xl font-semibold mb-4">Por que usar o astleta?</h2>
+                <h2 class="text-2xl font-semibold mb-4">Por que usar o SeuRacha?</h2>
                 <ul class="list-disc list-inside text-lg space-y-2 text-white text-opacity-90">
                     <li>Acesso rápido aos resultados dos jogos</li>
                     <li>Estatísticas detalhadas dos times e jogadores</li>
@@ -34,6 +34,6 @@ const logout = async () => {
             </section>
             <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded transition text-lg shadow-lg">Comece Agora</a>
         </main>
-        <footer class="mt-10 text-white text-opacity-70 text-sm">&copy; 2025 Astleta. Todos os direitos reservados.</footer>
+        <footer class="mt-10 text-white text-opacity-70 text-sm">&copy; 2025 SeuRacha. Todos os direitos reservados.</footer>
     </div>
 </template>

@@ -358,7 +358,7 @@ async function sendBooking(): Promise<void> {
         message += `Duração: ${booking.durationMinutes}\n`;
         message += `Arena: ${booking.field?.name}\n`;
 
-        message += `Mais detalhes você pode ver pelo astleta\n`;
+        message += `Mais detalhes você pode ver pelo SeuRacha\n`;
         message += `Vá em "Minhas Reservas" através do link: ${rachasUrl}\n`;
 
         const phone = sendBookingState.phone.replace(/\D/g, '');
@@ -984,7 +984,7 @@ function applyFilters(): void {
                         <div>
                             <label for="assign_to_user" class="flex items-center justify-between font-bold mb-3">
                                 <span>Atribuir a Usuário do Sistema</span>
-                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Escolha se deseja atribuir a reserva a um usuário do sistema astleta'" />
+                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Escolha se deseja atribuir a reserva a um usuário do sistema SeuRacha'" />
                             </label>
                             <Select
                                 id="assign_to_user"
@@ -1003,7 +1003,7 @@ function applyFilters(): void {
                         <div v-if="assignToUser">
                             <label for="user_phone" class="flex items-center justify-between font-bold mb-3">
                                 <span>Telefone do Usuário <span class="text-red-500">*</span></span>
-                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema astleta para atribuir a reserva.'" />
+                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema SeuRacha para atribuir a reserva.'" />
                             </label>
                             <InputMask id="user_phone" v-model="userPhone" mask="99 99999-9999" placeholder="00 00000-0000" :invalid="submitted && assignToUser && !userPhone" fluid type="tel" />
                             <small v-if="submitted && assignToUser && !userPhone" class="text-red-500">Telefone é obrigatório quando atribuir a usuário.</small>
@@ -1108,7 +1108,7 @@ function applyFilters(): void {
                     <div v-if="sendBookingState.sendMethod === 'system'">
                         <label for="phone" class="flex items-center justify-between text-900 font-medium mb-2">
                             <span>Telefone do Usuário <span class="text-red-500">*</span></span>
-                            <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema astleta para enviar e atribuir a comanda.'" />
+                            <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema SeuRacha para enviar e atribuir a comanda.'" />
                         </label>
                         <InputMask id="phone" v-model="sendBookingState.phone" mask="99 99999-9999" placeholder="00 00000-0000" class="w-full mb-4" type="tel" />
                         <div class="flex flex-col items-center mt-4 text-center border border-orange-400 dark:border-orange-500 bg-orange-50 dark:bg-orange-900/40 rounded-lg p-4 shadow-sm">

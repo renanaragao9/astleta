@@ -424,7 +424,7 @@ const sendToWhatsApp = (purchase: Purchase): void => {
         });
     }
 
-    message += `\n*Enviado via Astleta*`;
+    message += `\n*Enviado via SeuRacha*`;
 
     const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');

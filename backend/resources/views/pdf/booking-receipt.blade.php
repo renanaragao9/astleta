@@ -210,8 +210,8 @@
         </div>
 
         <div class="company-info">
-            <strong>ASTLETA</strong><br>
-            <strong>astletacontato@gmail.com</strong><br>
+            <strong>SeuRacha</strong><br>
+            <strong>seuracha@seuracha.com</strong><br>
         </div>
 
         <div class="content">
@@ -314,14 +314,14 @@
 
             <div class="fiscal-note">
                 <strong>INFORMAÇÕES IMPORTANTES:</strong>
-                Este é um comprovante de reserva. O pagamento deverá ser realizado diretamente com o estabelecimento parceiro ({{ $booking->field->company->name ?? 'parceiro' }}) no horário da reserva. A ASTLETA é apenas uma plataforma de intermediação. Certifique-se de receber um recibo/nota fiscal do estabelecimento após o pagamento.
+                Este é um comprovante de reserva. O pagamento deverá ser realizado diretamente com o estabelecimento parceiro ({{ $booking->field->company->name ?? 'parceiro' }}) no horário da reserva. A SeuRacha é apenas uma plataforma de intermediação. Certifique-se de receber um recibo/nota fiscal do estabelecimento após o pagamento.
             </div>
         </div>
 
         <div class="footer">
-            <div class="footer-text">Obrigado por utilizar a ASTLETA!</div>
+            <div class="footer-text">Obrigado por utilizar a SeuRacha!</div>
             <div class="footer-text">Documento gerado em {{ now()->format('d/m/Y às H:i:s') }}</div>
-            <div class="footer-logo">ASTLETA</div>
+            <div class="footer-logo">SeuRacha</div>
         </div>
     </div>
 </body>

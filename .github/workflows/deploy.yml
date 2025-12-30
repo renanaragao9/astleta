@@ -1,4 +1,4 @@
-name: Deploy Astleta Backend + Frontend
+name: Deploy SeuRacha Backend + Frontend
 
 on:
   push:

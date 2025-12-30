@@ -19,24 +19,24 @@ import PublicFooter from '@/components/public/PublicFooter.vue';
 import PublicTopbar from '@/components/public/PublicTopbar.vue';
 
 useHead({
-    title: 'Anuncie Seu Campo Esportivo na Astleta - Plataforma de Reservas',
+    title: 'Anuncie Seu Campo Esportivo na SeuRacha - Plataforma de Reservas',
     meta: [
         {
             name: 'description',
-            content: 'Anuncie seu campo esportivo na Astleta e alcance milhares de atletas. Sistema completo de gestão de reservas, controle financeiro e avaliações para proprietários de campos.'
+            content: 'Anuncie seu campo esportivo na SeuRacha e alcance milhares de atletas. Sistema completo de gestão de reservas, controle financeiro e avaliações para proprietários de campos.'
         },
         {
             name: 'keywords',
-            content: 'anunciar campo, reservas esportivas, gestão campos, Astleta, campos esportivos, reservas online, proprietários campos'
+            content: 'anunciar campo, reservas esportivas, gestão campos, SeuRacha, campos esportivos, reservas online, proprietários campos'
         },
-        { property: 'og:title', content: 'Anuncie Seu Campo Esportivo na Astleta - Plataforma de Reservas' },
+        { property: 'og:title', content: 'Anuncie Seu Campo Esportivo na SeuRacha - Plataforma de Reservas' },
         {
             property: 'og:description',
-            content: 'Alcance milhares de atletas com seu campo esportivo na Astleta. Gestão automatizada de reservas e controle financeiro.'
+            content: 'Alcance milhares de atletas com seu campo esportivo na SeuRacha. Gestão automatizada de reservas e controle financeiro.'
         },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'Anuncie Seu Campo Esportivo na Astleta' },
+        { name: 'twitter:title', content: 'Anuncie Seu Campo Esportivo na SeuRacha' },
         {
             name: 'twitter:description',
             content: 'Sistema completo para proprietários de campos esportivos anunciarem e gerenciarem reservas.'
@@ -152,7 +152,7 @@ const features = [
 
 const testimonials = [
     {
-        text: 'Desde que cadastrei meu campo na Astleta, minha ocupação aumentou 80%. A plataforma é fantástica!',
+        text: 'Desde que cadastrei meu campo na SeuRacha, minha ocupação aumentou 80%. A plataforma é fantástica!',
         author: 'Carlos Silva',
         role: 'Proprietário - Arena Sports'
     },
@@ -208,7 +208,7 @@ const statistics = [
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-8">
                         <div class="space-y-4">
-                            <p class="text-lg text-gray-700 italic">Seja bem-vindo à família Astleta! Junte-se a milhares de proprietários que já estão faturando mais e gerenciando seus campos com eficiência.</p>
+                            <p class="text-lg text-gray-700 italic">Seja bem-vindo à família SeuRacha! Junte-se a milhares de proprietários que já estão faturando mais e gerenciando seus campos com eficiência.</p>
                             <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">Transforme seu Campo em um <span class="text-primary-500">Negócio de Sucesso</span></h1>
                             <p class="text-xl text-gray-600 leading-relaxed">Junte-se à maior plataforma de reserva de campos esportivos do país e maximize seus ganhos com tecnologia de ponta.</p>
                         </div>
@@ -336,7 +336,7 @@ const statistics = [
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Por que Escolher a Astleta?</h2>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Por que Escolher a SeuRacha?</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">Oferecemos tudo que você precisa para transformar seu campo em um negócio próspero e bem-sucedido.</p>
                 </div>
 

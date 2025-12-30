@@ -16,27 +16,27 @@ import PublicFooter from '@/components/public/PublicFooter.vue';
 import PublicTopbar from '@/components/public/PublicTopbar.vue';
 
 useHead({
-    title: 'Boletim do Atleta Amador - Encontre Atletas | Astleta',
+    title: 'Boletim do Atleta Amador',
     meta: [
         {
             name: 'description',
-            content: 'Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma Astleta. Busque por nome, esporte, posição e lado dominante.'
+            content: 'Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma SeuRacha. Busque por nome, esporte, posição e lado dominante.'
         },
         {
             name: 'keywords',
-            content: 'atletas amadores, perfis esportivos, busca atletas, Astleta, boletim atleta amador, lado dominante'
+            content: 'atletas amadores, perfis esportivos, busca atletas, SeuRacha, boletim atleta amador, lado dominante'
         },
-        { property: 'og:title', content: 'Boletim do Atleta Amador - Encontre Atletas | Astleta' },
+        { property: 'og:title', content: 'Boletim do Atleta Amador - Encontre Atletas | SeuRacha' },
         {
             property: 'og:description',
-            content: 'Consulte perfis completos de atletas amadores na plataforma Astleta.'
+            content: 'Consulte perfis completos de atletas amadores na plataforma SeuRacha.'
         },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'Boletim do Atleta Amador - Encontre Atletas | Astleta' },
+        { name: 'twitter:title', content: 'Boletim do Atleta Amador - Encontre Atletas | SeuRacha' },
         {
             name: 'twitter:description',
-            content: 'Consulte perfis completos de atletas amadores na plataforma Astleta.'
+            content: 'Consulte perfis completos de atletas amadores na plataforma SeuRacha.'
         }
     ]
 });
@@ -173,7 +173,7 @@ onMounted(() => {
                         Encontre Atletas
                         <span class="text-white">da Sua Região</span>
                     </h1>
-                    <p class="text-xl text-white leading-relaxed mb-8 max-w-3xl mx-auto">Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma Astleta.</p>
+                    <p class="text-xl text-white leading-relaxed mb-8 max-w-3xl mx-auto">Consulte o Boletim do Atleta Amador e conheça os perfis completos dos atletas cadastrados na plataforma SeuRacha.</p>
                 </div>
             </div>
         </section>

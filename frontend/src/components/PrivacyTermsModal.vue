@@ -42,20 +42,20 @@ const handleClose = () => {
                 <TabPanels class="mt-4">
                     <TabPanel value="0" class="p-0">
                         <div class="max-h-96 overflow-y-auto pr-2 space-y-4">
-                            <h3 class="text-xl font-semibold text-surface-900 dark:text-surface-0 mb-4">Termos de Uso - Astleta</h3>
+                            <h3 class="text-xl font-semibold text-surface-900 dark:text-surface-0 mb-4">Termos de Uso - SeuRacha</h3>
 
                             <div class="space-y-4 text-surface-700 dark:text-surface-300">
                                 <section>
                                     <h4 class="font-semibold mb-2">1. Aceitação dos Termos</h4>
                                     <p>
-                                        Ao acessar e usar a plataforma Astleta, você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso, que, juntamente com nossa política de privacidade, regem o relacionamento da Astleta
+                                        Ao acessar e usar a plataforma SeuRacha, você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso, que, juntamente com nossa política de privacidade, regem o relacionamento da SeuRacha
                                         com você em relação a este site.
                                     </p>
                                 </section>
 
                                 <section>
                                     <h4 class="font-semibold mb-2">2. Descrição do Serviço</h4>
-                                    <p>O Astleta é uma plataforma digital que conecta atletas e estabelecimentos esportivos, facilitando o agendamento de quadras esportivas e a organização de eventos esportivos. Nossos serviços incluem:</p>
+                                    <p>O SeuRacha é uma plataforma digital que conecta atletas e estabelecimentos esportivos, facilitando o agendamento de quadras esportivas e a organização de eventos esportivos. Nossos serviços incluem:</p>
                                     <ul class="list-disc ml-6 mt-2 space-y-1">
                                         <li>Busca e reserva de quadras esportivas</li>
                                         <li>Organização de grupos e eventos esportivos</li>
@@ -92,12 +92,12 @@ const handleClose = () => {
 
                                 <section>
                                     <h4 class="font-semibold mb-2">6. Propriedade Intelectual</h4>
-                                    <p>Todo o conteúdo da plataforma Astleta, incluindo textos, gráficos, logotipos e software, é propriedade da Astleta ou de seus licenciadores e está protegido por leis de direitos autorais.</p>
+                                    <p>Todo o conteúdo da plataforma SeuRacha, incluindo textos, gráficos, logotipos e software, é propriedade da SeuRacha ou de seus licenciadores e está protegido por leis de direitos autorais.</p>
                                 </section>
 
                                 <section>
                                     <h4 class="font-semibold mb-2">7. Limitação de Responsabilidade</h4>
-                                    <p>A Astleta não será responsável por danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso da plataforma. Nosso papel é facilitar a conexão entre usuários e estabelecimentos.</p>
+                                    <p>A SeuRacha não será responsável por danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso da plataforma. Nosso papel é facilitar a conexão entre usuários e estabelecimentos.</p>
                                 </section>
 
                                 <section>
@@ -110,7 +110,7 @@ const handleClose = () => {
 
                     <TabPanel value="1" class="p-0">
                         <div class="max-h-96 overflow-y-auto pr-2 space-y-4">
-                            <h3 class="text-xl font-semibold text-surface-900 dark:text-surface-0 mb-4">Política de Privacidade - Astleta</h3>
+                            <h3 class="text-xl font-semibold text-surface-900 dark:text-surface-0 mb-4">Política de Privacidade - SeuRacha</h3>
 
                             <div class="space-y-4 text-surface-700 dark:text-surface-300">
                                 <section>
@@ -206,7 +206,7 @@ const handleClose = () => {
                                     <p><strong>Encarregado de Proteção de Dados (DPO):</strong></p>
                                     <div class="bg-surface-100 dark:bg-surface-800 p-4 rounded-lg mt-2">
                                         <p><strong>Nome:</strong> Renan da Silva Aragão</p>
-                                        <p><strong>E-mail:</strong> astleta@astleta.com</p>
+                                        <p><strong>E-mail:</strong> seuracha@seuracha.com</p>
                                     </div>
                                     <p class="mt-4">Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato conosco através dos canais acima.</p>
                                 </section>

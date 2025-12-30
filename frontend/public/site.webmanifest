@@ -1,7 +1,7 @@
 {
-    "name": "Astleta",
-    "short_name": "Astleta",
-    "description": "Plataforma Astleta",
+    "name": "SeuRacha",
+    "short_name": "SeuRacha",
+    "description": "Plataforma SeuRacha - Gerencie seus treinos, acompanhe sua performance atlética e alcance seus objetivos esportivos com ferramentas avançadas.",
     "icons": [
         {
             "src": "/icons/favicon-16x16.png",

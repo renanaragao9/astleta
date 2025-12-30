@@ -87,7 +87,7 @@ const goHome = () => {
                 <div class="flex-shrink-0 cursor-pointer">
                     <div class="flex items-center space-x-2">
                         <i class="pi pi-shield text-primary-500 dark:text-primary-400" style="font-size: 1.5rem"></i>
-                        <span class="hidden md:inline text-2xl font-bold text-gray-900 dark:text-gray-100">Astleta</span>
+                        <span class="hidden md:inline text-2xl font-bold text-gray-900 dark:text-gray-100">SeuRacha</span>
                     </div>
                 </div>
             </router-link>

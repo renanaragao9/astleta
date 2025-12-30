@@ -165,9 +165,9 @@ const openPrivacyModal = () => {
             <div style="border-radius: 56px; padding: 0.3rem; margin-top: 3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
                 <div class="w-full max-w-none sm:max-w-5xl bg-surface-0 dark:bg-surface-900 px-4 sm:px-10" style="border-radius: 53px">
                     <div class="text-center">
-                        <img src="/image/logo.png" alt="Astleta Logo" class="w-24 h-24 object-contain mx-auto rounded-lg" />
+                        <img src="/image/logo.png" alt="SeuRacha Logo" class="w-24 h-24 object-contain mx-auto rounded-lg" />
 
-                        <span class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4 block">Cadastre-se no Astleta!</span>
+                        <span class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4 block">Cadastre-se no SeuRacha!</span>
                         <span class="text-muted-color font-medium">Crie sua conta para começar</span>
                     </div>
 

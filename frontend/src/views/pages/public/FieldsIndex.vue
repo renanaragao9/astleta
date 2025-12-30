@@ -174,11 +174,11 @@ const installPWA = async () => {
 };
 
 useHead({
-    title: 'Astleta - Aluguel de Society, Campos para Racha e Arenas Esportivas',
+    title: 'SeuRacha - Aluguel de Society, Campos para Racha e Arenas Esportivas',
     meta: [
         {
             name: 'description',
-            content: 'Alugue society, reserve campos para racha e descubra arenas esportivas próximos a você. Quadras para futebol, vôlei, basquete e mais com a plataforma Astleta.'
+            content: 'Alugue society, reserve campos para racha e descubra arenas esportivas próximos a você. Quadras para futebol, vôlei, basquete e mais com a plataforma SeuRacha.'
         },
         {
             name: 'keywords',
@@ -187,8 +187,8 @@ useHead({
                 'futebol, vôlei, basquete, esportes, racha de futebol, futsal, society, pelada, treino esportivo, ' +
                 'reserva de quadras, aluguel de campos, jogos de futebol, academia ao ar livre'
         },
-        { property: 'og:title', content: 'Astleta - Aluguel de Society, Campos para Racha e Arenas Esportivas' },
-        { property: 'og:description', content: 'Alugue society e reserve campos para racha próximos a você. Descubra arenas esportivas com a plataforma Astleta.' },
+        { property: 'og:title', content: 'SeuRacha - Aluguel de Society, Campos para Racha e Arenas Esportivas' },
+        { property: 'og:description', content: 'Alugue society e reserve campos para racha próximos a você. Descubra arenas esportivas com a plataforma SeuRacha.' },
         { property: 'og:type', content: 'website' }
     ]
 });

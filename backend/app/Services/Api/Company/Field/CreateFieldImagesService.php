@@ -12,7 +12,7 @@ class CreateFieldImagesService
         return collect($images)->map(function ($image) use ($fieldId) {
             $file = $image['file'];
 
-            $path = $file->store(env('', 'astleta').'/fields/images', 's3');
+            $path = $file->store(env('AWS_BUCKET', 'seuracha') . '/fields/images', 's3');
 
             return FieldImage::create([
                 'field_id' => $fieldId,

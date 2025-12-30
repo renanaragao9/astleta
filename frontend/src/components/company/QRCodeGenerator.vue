@@ -173,7 +173,7 @@ const printQRCode = () => {
                 <img src="${dataURL}" alt="QR Code" />
                 <p>Escaneie o QR code para acessar o perfil da empresa</p>
                 <div class="instructions">
-                    Astleta 
+                    SeuRacha - Conectando você ao esporte! 
                 </div>
             </div>
         </body>

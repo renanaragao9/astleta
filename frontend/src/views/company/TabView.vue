@@ -296,7 +296,7 @@ async function sendTab(): Promise<void> {
             message += `\n`;
         }
 
-        message += `Mais detalhes você pode ver pelo astleta\n\n`;
+        message += `Mais detalhes você pode ver pelo SeuRacha\n\n`;
         message += `Vá em "Minhas Comandas" através do link: ${rachasUrl}\n\n`;
 
         const phone = sendTabState.phone.replace(/\D/g, '');
@@ -1256,7 +1256,7 @@ function applyFilters(): void {
                         <div v-if="sendTabState.sendMethod === 'system'">
                             <label for="phone" class="flex items-center justify-between text-900 font-medium mb-2">
                                 <span>Telefone do Usuário <span class="text-red-500">*</span></span>
-                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema astleta para enviar e atribuir a comanda.'" />
+                                <i class="pi pi-info-circle text-blue-500 cursor-help hidden md:inline" v-tooltip.top="'Digite o telefone do usuário do sistema SeuRacha para enviar e atribuir a comanda.'" />
                             </label>
                             <InputMask id="phone" v-model="sendTabState.phone" mask="99 99999-9999" placeholder="00 00000-0000" class="w-full" type="tel" />
                             <div class="flex flex-col items-center mt-4 text-center border border-orange-400 dark:border-orange-500 bg-orange-50 dark:bg-orange-900/40 rounded-lg p-4 shadow-sm">

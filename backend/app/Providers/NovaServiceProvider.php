@@ -71,7 +71,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::footer(function ($request) {
             $year = date('Y');
 
-            return Blade::render("<center> © Direitos reservados a <a> Astleta </a> - Painel Admin {$year} </center>");
+            return Blade::render("<center> © Direitos reservados a <a> SeuRacha </a> - Painel Admin {$year} </center>");
         });
 
         Nova::mainMenu(function () {

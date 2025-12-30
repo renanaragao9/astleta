@@ -141,7 +141,7 @@ const goToLogin = () => {
             <div class="w-full md:w-96 lg:w-[42rem] bg-surface-0 dark:bg-surface-900 px-4 sm:px-20" style="border-radius: 53px">
                 <div class="w-full bg-surface-0 dark:bg-surface-900 py-20 px-8 sm:px-20" style="border-radius: 53px">
                     <div class="text-center mb-8">
-                        <img src="/image/logo.png" alt="Astleta Logo" class="mb-4 w-24 h-24 object-contain mx-auto rounded-lg" />
+                        <img src="/image/logo.png" alt="SeuRacha Logo" class="mb-4 w-24 h-24 object-contain mx-auto rounded-lg" />
                         <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Verificação de Email</div>
                         <span class="text-muted-color font-medium">Digite o código enviado para seu email</span>
                     </div>

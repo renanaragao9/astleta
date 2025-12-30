@@ -254,7 +254,7 @@
         </div>
 
         <div class="company-info">
-            <strong>ASTLETA - Plataforma de Intermediação</strong><br>
+            <strong>SeuRacha - Plataforma de Intermediação</strong><br>
             {{-- CNPJ: {{ env('COMPANY_CNPJ', 'XX.XXX.XXX/XXXX-XX') }} | {{ env('COMPANY_EMAIL', 'contato@astleta.com.br') }} --}}
         </div>
 
@@ -337,14 +337,14 @@
 
             <div class="fiscal-note">
                 <strong>INFORMAÇÕES IMPORTANTES:</strong>
-                Este é um comprovante de comanda de consumo. Guarde este comprovante como comprovação de sua consumação. O estabelecimento é responsável pela emissão de documentos fiscais quando aplicável. A ASTLETA é uma plataforma de intermediação.
+                Este é um comprovante de comanda de consumo. Guarde este comprovante como comprovação de sua consumação. O estabelecimento é responsável pela emissão de documentos fiscais quando aplicável. O SeuRacha é uma plataforma de intermediação.
             </div>
         </div>
 
         <div class="footer">
             <div class="footer-text">Obrigado por sua compra!</div>
             <div class="footer-text">Documento gerado em {{ now()->format('d/m/Y às H:i:s') }}</div>
-            <div class="footer-logo">ASTLETA</div>
+            <div class="footer-logo">SeuRacha</div>
         </div>
     </div>
 </body>

@@ -12,7 +12,7 @@ class UploadFIleToS3Helper
         $hash = hash('sha256', $content . time());
         $extension = $file->getClientOriginalExtension();
         $filename = $hash . '.' . $extension;
-        $key = "astleta/{$path}/{$filename}";
+        $key = "seuracha/{$path}/{$filename}";
         $mimetype = mime_content_type($file->getRealPath());
 
         $s3 = new S3Client([

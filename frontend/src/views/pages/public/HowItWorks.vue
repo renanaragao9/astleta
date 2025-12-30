@@ -8,24 +8,24 @@ import PublicFooter from '@/components/public/PublicFooter.vue';
 import PublicTopbar from '@/components/public/PublicTopbar.vue';
 
 useHead({
-    title: 'Como Funciona a Astleta - Plataforma para Atletas e Proprietários de Campos',
+    title: 'Como Funciona o SeuRacha - Plataforma para Atletas e Proprietários de Campos',
     meta: [
         {
             name: 'description',
-            content: 'Descubra como a Astleta funciona para atletas e proprietários de campos. Sistema completo de reservas esportivas, perfis de atletas e gestão automatizada de campos.'
+            content: 'Descubra como o SeuRacha funciona para atletas e proprietários de campos. Sistema completo de reservas esportivas, perfis de atletas e gestão automatizada de campos.'
         },
         {
             name: 'keywords',
-            content: 'como funciona Astleta, reservas esportivas, atletas, proprietários campos, plataforma esportiva, reservas online, gestão campos'
+            content: 'como funciona SeuRacha, reservas esportivas, atletas, proprietários campos, plataforma esportiva, reservas online, gestão campos'
         },
-        { property: 'og:title', content: 'Como Funciona a Astleta - Plataforma para Atletas e Proprietários' },
+        { property: 'og:title', content: 'Como Funciona o SeuRacha - Plataforma para Atletas e Proprietários' },
         {
             property: 'og:description',
             content: 'Sistema completo para reservas de campos esportivos e gestão para proprietários. Perfil de atletas e comunidade esportiva.'
         },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'Como Funciona a Astleta' },
+        { name: 'twitter:title', content: 'Como Funciona o SeuRacha' },
         {
             name: 'twitter:description',
             content: 'Plataforma completa para atletas e proprietários de campos esportivos.'

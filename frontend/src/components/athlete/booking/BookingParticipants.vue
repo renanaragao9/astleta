@@ -231,7 +231,7 @@ const sendToWhatsApp = (): void => {
         }
     }
 
-    message += `\n🔗 *Acesse o astleta*\n`;
+    message += `\n🔗 *Acesse o SeuRacha*\n`;
     message += `Vá em "Meus Rachas" através do link: ${rachasUrl}\n`;
     message += `Clique em "Entrar no Racha" e informe o número da reserva acima.\n`;
 
