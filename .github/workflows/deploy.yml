@@ -55,7 +55,7 @@ jobs:
             cd ../frontend
 
             echo "Instalando dependências do Node.js..."
-            npm ci
+            npm install
 
             echo "Rodando build do Vue 3 / Vite..."
             npm run build

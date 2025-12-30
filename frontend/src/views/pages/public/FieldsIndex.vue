@@ -178,7 +178,7 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: 'Encontre campos society e arenas esportivas para racha perto de você. Reserve online quadras de futebol, futsal, vôlei e basquete com o SeuRacha.'
+            content: 'Encontre campos society e arenas esportivas para racha perto de você. Reserve online quadras de futebol, futsal, vôlei e basquete com o SeuRacha. Encontre o local ideal para seu próximo jogo!'
         },
         { property: 'og:title', content: 'Campos Society e Arenas para Racha | SeuRacha' },
         {
