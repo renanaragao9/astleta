@@ -22,10 +22,15 @@ jobs:
           port: 22
           debug: true
           script: |
+            set -e
+
+            cd /var/www/astleta
+
+            echo "Atualizando o código..."
+            git pull --ff-only origin main
+
             # === BACKEND ===
-            cd /var/www/astleta/backend
-            echo "Atualizando o código backend..."
-            git pull origin main
+            cd backend
 
             echo "Instalando dependências do PHP..."
             composer install --no-dev --optimize-autoloader
@@ -35,10 +40,7 @@ jobs:
             php artisan db:seed --force
 
             echo "Limpando caches do Laravel..."
-            php artisan config:clear
-            php artisan cache:clear
-            php artisan route:clear
-            php artisan view:clear
+            php artisan optimize:clear
 
             echo "Reiniciando o Horizon..."
             php artisan horizon:terminate
@@ -50,12 +52,10 @@ jobs:
             sudo systemctl restart php8.3-fpm
 
             # === FRONTEND ===
-            cd /var/www/astleta/frontend
-            echo "Atualizando código frontend..."
-            git pull origin main
+            cd ../frontend
 
             echo "Instalando dependências do Node.js..."
-            npm install
+            npm ci
 
             echo "Rodando build do Vue 3 / Vite..."
             npm run build
