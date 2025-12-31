@@ -7,52 +7,54 @@ export const publicRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/pages/public/FieldsIndex.vue'),
         meta: { requiresAuth: false }
     },
-
     {
-        path: '/campos',
-        name: 'campos',
+        path: '/arenas',
+        name: 'fields-index',
         component: () => import('@/views/pages/public/FieldsIndex.vue'),
         meta: { requiresAuth: false }
     },
-
     {
-        path: '/arenas',
-        redirect: '/campos'
+        path: '/campos',
+        name: 'fields-index',
+        component: () => import('@/views/pages/public/FieldsIndex.vue'),
+        meta: { requiresAuth: false }
     },
-
     {
-        path: '/campo/:id',
-        name: 'campo-detalhe',
+        path: '/arena/:id',
+        name: 'field-detail',
         component: () => import('@/views/pages/public/FieldDetail.vue'),
         meta: { requiresAuth: false }
     },
-
     {
-        path: '/arena/:id',
-        redirect: (to) => `/campo/${to.params.id}`
+        path: '/campo/:id',
+        name: 'field-detail',
+        component: () => import('@/views/pages/public/FieldDetail.vue'),
+        meta: { requiresAuth: false }
     },
-
     {
         path: '/empresa/:id',
-        name: 'empresa-perfil',
+        name: 'company-profile',
         component: () => import('@/views/pages/public/CompanyProfile.vue'),
         meta: { requiresAuth: false }
     },
-
+    {
+        path: '/compania/:id',
+        name: 'company-profile',
+        component: () => import('@/views/pages/public/CompanyProfile.vue'),
+        meta: { requiresAuth: false }
+    },
     {
         path: '/anunciar-campo',
-        name: 'anunciar-campo',
+        name: 'advertise-field',
         component: () => import('@/views/pages/public/AdvertiseField.vue'),
         meta: { requiresAuth: false }
     },
-
     {
         path: '/como-funciona',
-        name: 'como-funciona',
+        name: 'how-it-works',
         component: () => import('@/views/pages/public/HowItWorks.vue'),
         meta: { requiresAuth: false }
     },
-
     {
         path: '/baa',
         name: 'baa',

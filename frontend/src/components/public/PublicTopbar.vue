@@ -65,11 +65,11 @@ const navigateToHome = () => {
 };
 
 const navigateToAdvertiseField = () => {
-    router.push({ name: 'anunciar-campo' });
+    router.push({ name: 'advertise-field' });
 };
 
-const navigateToComoFunciona = () => {
-    router.push({ name: 'como-funciona' });
+const navigateToHowItWorks = () => {
+    router.push({ name: 'how-it-works' });
 };
 
 const navigateToBAA = () => {
@@ -114,7 +114,7 @@ const handleSearch = () => {
                         <a href="#" @click="navigateToBAA" :class="route.name === 'baa' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                             >BAA - Boletim do Atleta Amador</a
                         >
-                        <a href="#" @click="navigateToComoFunciona" :class="route.name === 'como-funciona' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
+                        <a href="#" @click="navigateToHowItWorks" :class="route.name === 'how-it-works' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                             >Como Funciona</a
                         >
                         <a
@@ -170,7 +170,7 @@ const handleSearch = () => {
                                 <button @click="navigateToLogin" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Entrar</button>
                                 <hr class="my-2 border-gray-200" />
                                 <button @click="navigateToAdvertiseField" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Anunciar seu campo</button>
-                                <button @click="navigateToComoFunciona" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
+                                <button @click="navigateToHowItWorks" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
                                 <button @click="navigateToBAA" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">BAA - Boletim do Atleta Amador</button>
                             </div>
                             <div v-else-if="authStore.user?.profile?.name !== 'company'" class="flex flex-col space-y-1">
@@ -180,7 +180,7 @@ const handleSearch = () => {
                                 <button @click="handleLogout" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"><i class="pi pi-fw pi-sign-out"></i> Sair</button>
                                 <hr class="my-2 border-gray-200" />
                                 <button @click="navigateToAdvertiseField" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Anunciar seu campo</button>
-                                <button @click="navigateToComoFunciona" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
+                                <button @click="navigateToHowItWorks" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
                                 <button @click="navigateToBAA" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">BAA - Boletim do Atleta Amador</button>
                             </div>
                             <div v-else class="flex flex-col space-y-1">
@@ -190,7 +190,7 @@ const handleSearch = () => {
                                 <button @click="handleLogout" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"><i class="pi pi-fw pi-sign-out"></i> Sair</button>
                                 <hr class="my-2 border-gray-200" />
                                 <button @click="navigateToAdvertiseField" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Anunciar seu campo</button>
-                                <button @click="navigateToComoFunciona" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
+                                <button @click="navigateToHowItWorks" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Como Funciona</button>
                                 <button @click="navigateToBAA" class="text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">BAA - Boletim do Atleta Amador</button>
                             </div>
                         </Popover>
@@ -210,7 +210,7 @@ const handleSearch = () => {
 
                 <nav class="px-4 py-2 space-y-2">
                     <a href="/campos" class="block px-4 py-3 text-primary-500 bg-primary-50 rounded-lg font-medium">Campos</a>
-                    <a @click="navigateToComoFunciona" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer">Como Funciona</a>
+                    <a @click="navigateToHowItWorks" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer">Como Funciona</a>
                     <a @click="navigateToBAA" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer">BAA - Boletim do Atleta Amador</a>
                     <a href="#" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors">Seja Parceiro</a>
 
