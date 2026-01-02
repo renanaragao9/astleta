@@ -182,7 +182,7 @@ const testimonials = [
 const faqs = [
     {
         question: 'Quanto custa para anunciar meu campo?',
-        answer: 'Você paga apenas 1.8% por reserva concluída. Sem mensalidade e sem multa para sair.'
+        answer: 'Você não paga nada por reserva concluída. Sem mensalidade e sem multa para sair.'
     },
     {
         question: 'Como funciona o sistema de reservas?',
@@ -204,7 +204,7 @@ const faqs = [
 
 const statistics = [
     { number: '100+', label: 'Tipos de campos*' },
-    { number: '1.8%', label: 'por reserva concluída' },
+    { number: '0%', label: 'por reserva concluída' },
     { number: '95%', label: 'Satisfação dos Proprietários' },
     { number: '24h', label: 'Suporte Disponível' }
 ];
@@ -287,7 +287,7 @@ const shareLanding = async () => {
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                                         <h4 class="text-lg font-semibold text-gray-800">Taxas do Sistema</h4>
-                                        <div class="text-3xl font-bold text-blue-600 mt-2">1.8%</div>
+                                        <div class="text-3xl font-bold text-blue-600 mt-2">0%</div>
                                         <div class="text-sm text-gray-600 mt-1">Por reserva concluída. Sem mensalidade.</div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
