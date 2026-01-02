@@ -1,14 +1,23 @@
-node_modules
-coverage
+# Node
+node_modules/
+coverage/
 *.log*
-.nuxt
-.nitro
-.cache
-.output
+.cache/
+.output/
+
+# Vue / Vite
+dist/
+components.d.ts
+
+# Nuxt (caso use futuramente)
+.nuxt/
+.nitro/
+
+# Ambiente
 .env
-dist
+
+# Sistema
 .DS_Store
+**/.DS_Store
 .idea
 .eslintcache
-api-generator/typedoc.json
-**/.DS_Store
