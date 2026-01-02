@@ -9,6 +9,10 @@ const logout = async () => {
     await authStore.logout();
     router.push({ name: 'login' });
 };
+
+const startNow = () => {
+    router.push({ name: 'home' });
+};
 </script>
 
 <template>
@@ -32,7 +36,7 @@ const logout = async () => {
                     <span>Sair</span>
                 </button>
             </section>
-            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded transition text-lg shadow-lg">Comece Agora</a>
+            <a @click="startNow" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded transition text-lg shadow-lg cursor-pointer">Comece Agora</a>
         </main>
         <footer class="mt-10 text-white text-opacity-70 text-sm">&copy; 2025 SeuRacha. Todos os direitos reservados.</footer>
     </div>

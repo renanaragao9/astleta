@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const navigateToHowItWorks = () => {
+    router.push({ name: 'how-it-works' });
+};
+
+const navigateToAdvertiseField = () => {
+    router.push({ name: 'advertise-field' });
+};
+</script>
 
 <template>
     <footer class="bg-gray-900 text-white py-16 min-h-[400px]">
@@ -19,10 +31,10 @@
                     <h3 class="text-lg font-semibold mb-4 text-primary-400">Empresa</h3>
                     <ul class="space-y-2">
                         <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-info-circle mr-2"></i>Sobre Nós</a>
+                            <a @click="navigateToAdvertiseField" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-plus-circle mr-2"></i>Anunciar Arena</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-cogs mr-2"></i>Como Funciona</a>
+                            <a @click="navigateToHowItWorks" class="text-gray-400 hover:text-white transition-colors flex items-center cursor-pointer"><i class="fas fa-cogs mr-2"></i>Como Funciona</a>
                         </li>
                         <li>
                             <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-file-contract mr-2"></i>Termos de Uso</a>
@@ -37,10 +49,10 @@
                     <h3 class="text-lg font-semibold mb-4 text-primary-400">Proprietários</h3>
                     <ul class="space-y-2">
                         <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-plus-circle mr-2"></i>Anunciar Arena</a>
+                            <a @click="navigateToAdvertiseField" class="text-gray-400 hover:text-white transition-colors flex items-center cursor-pointer"><i class="fas fa-plus-circle mr-2"></i>Anunciar Arena</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-edit mr-2"></i>Gerenciar Anúncios</a>
+                            <a @click="navigateToHowItWorks" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-cogs mr-2"></i>Como Funciona</a>
                         </li>
                         <li>
                             <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center"><i class="fas fa-question-circle mr-2"></i>Centro de Ajuda</a>

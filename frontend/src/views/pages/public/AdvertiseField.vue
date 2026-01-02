@@ -209,20 +209,6 @@ const statistics = [
     { number: '24h', label: 'Suporte Disponível' }
 ];
 
-const performanceHighlights = [
-    { value: '+38%', label: 'ocupação média em 90 dias', detail: 'Resultado médio dos campos que ativam reservas online e bloqueios inteligentes.' },
-    { value: '2.4x', label: 'mais vendas de bar', detail: 'Ticket médio sobe com comandas digitais ligadas às reservas.' },
-    { value: '12min', label: 'tempo salvo por reserva', detail: 'Automação de confirmação, cobrança e comunicação com o time.' },
-    { value: '1.8%', label: 'por reserva', detail: 'Sem mensalidade. Cobramos somente quando a reserva é concluída.' }
-];
-
-const roiBullets = [
-    'Calendário público que aparece no Google em menos de 7 dias',
-    'Dashboard de metas semanais com alertas de ocupação baixa',
-    'Comandas conectadas à reserva para reduzir calote e perda de produtos',
-    'Relatórios exportáveis para sócios e contabilidade em um clique'
-];
-
 const shareLanding = async () => {
     try {
         if (typeof navigator !== 'undefined' && navigator.share) {
@@ -370,99 +356,6 @@ const shareLanding = async () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="relative overflow-hidden bg-slate-900 text-white px-4 sm:px-6 lg:px-8 py-16">
-            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-emerald-400/10 to-transparent"></div>
-            <div class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-emerald-400/20 blur-3xl"></div>
-            <div class="absolute -left-12 bottom-0 h-56 w-56 rounded-full bg-white/5 blur-3xl"></div>
-
-            <div class="relative max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
-                <div class="space-y-6">
-                    <p class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-emerald-100 text-sm font-semibold backdrop-blur">
-                        <i class="pi pi-bolt mr-2"></i>
-                        Resultados em 90 dias ou menos
-                    </p>
-                    <h2 class="text-3xl lg:text-5xl font-bold leading-tight text-white">Ganhe tração real com dados e automação</h2>
-                    <p class="text-lg text-slate-100/80 max-w-2xl">Mostramos o que importa: mais ocupação, mais vendas de bar e menos tempo perdido com confirmação manual.</p>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div v-for="item in performanceHighlights" :key="item.label" class="rounded-xl border border-white/10 bg-white/5 p-4 shadow-lg">
-                            <div class="text-2xl font-bold text-emerald-300">{{ item.value }}</div>
-                            <div class="text-sm font-semibold text-white">{{ item.label }}</div>
-                            <p class="text-sm text-slate-100/70 mt-2">{{ item.detail }}</p>
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="rounded-xl bg-white text-slate-900 p-5 shadow-2xl">
-                            <h3 class="text-lg font-semibold mb-3">O que você passa a ganhar</h3>
-                            <ul class="space-y-2 text-sm text-slate-700">
-                                <li v-for="point in roiBullets" :key="point" class="flex items-start gap-2">
-                                    <i class="pi pi-check-circle text-emerald-600 mt-1"></i>
-                                    <span>{{ point }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="rounded-xl border border-white/10 bg-white/5 p-5 shadow-xl">
-                            <h3 class="text-lg font-semibold text-white mb-3">Pronto para compartilhar</h3>
-                            <p class="text-sm text-slate-100/80">Envie o link do seu campo para sócios ou parceiros e comece a receber reservas em minutos.</p>
-                            <div class="flex flex-wrap gap-3 mt-4">
-                                <Button @click="shareLanding" class="!bg-white !text-emerald-600 !border-white">
-                                    <i class="pi pi-share-alt mr-2"></i>
-                                    Compartilhar link
-                                </Button>
-                                <Button as="a" href="https://wa.me/5585921674573?text=Quero+colocar+meu+campo+no+SeuRacha" target="_blank" class="!bg-emerald-500 !border-emerald-400 !text-white">
-                                    <i class="pi pi-whatsapp mr-2"></i>
-                                    Falar com especialista
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative rounded-2xl bg-white/5 border border-white/10 p-8 shadow-2xl backdrop-blur">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-sm text-slate-100/70">Mapa de receita</p>
-                            <h3 class="text-2xl font-bold text-white">Previsão semanal</h3>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-xs font-semibold">Live</span>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-slate-100/80">Ocupação média</span>
-                            <span class="text-xl font-semibold text-emerald-300">82%</span>
-                        </div>
-                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                            <div class="h-2 bg-gradient-to-r from-emerald-400 to-emerald-300" style="width: 82%"></div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-slate-100/80">Faturamento previsto</span>
-                            <span class="text-xl font-semibold text-white">R$ 14.200</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="rounded-lg bg-white/5 border border-white/10 p-3">
-                                <p class="text-xs text-slate-100/70">Bar / Comanda</p>
-                                <p class="text-lg font-semibold text-white">R$ 4.800</p>
-                                <p class="text-xs text-emerald-200">+2.1x vs último mês</p>
-                            </div>
-                            <div class="rounded-lg bg-white/5 border border-white/10 p-3">
-                                <p class="text-xs text-slate-100/70">Reservas online</p>
-                                <p class="text-lg font-semibold text-white">R$ 9.400</p>
-                                <p class="text-xs text-emerald-200">+31% com calendário público</p>
-                            </div>
-                        </div>
-                        <div class="rounded-lg bg-white text-slate-900 p-4 shadow-xl mt-4">
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-semibold">Slot mais rentável</span>
-                                <span class="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">Sexta 20h</span>
-                            </div>
-                            <p class="text-sm text-slate-700 mt-2">R$ 420,00 de ticket médio e fila de espera de 6 times.</p>
                         </div>
                     </div>
                 </div>

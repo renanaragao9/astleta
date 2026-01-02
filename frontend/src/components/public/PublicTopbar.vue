@@ -64,6 +64,10 @@ const navigateToHome = () => {
     router.push({ name: 'home' });
 };
 
+const navigateToFields = () => {
+    router.push({ name: 'fields-index' });
+};
+
 const navigateToAdvertiseField = () => {
     router.push({ name: 'advertise-field' });
 };
@@ -110,19 +114,38 @@ const handleSearch = () => {
                     </div>
 
                     <nav class="hidden md:flex space-x-8">
-                        <a href="/" :class="route.name === 'home' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'">Início</a>
-                        <a href="#" @click="navigateToBAA" :class="route.name === 'baa' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
-                            >BAA - Boletim do Atleta Amador</a
+                        <button
+                            type="button"
+                            class="bg-transparent border-0 p-0"
+                            @click="navigateToHome"
+                            :class="route.name === 'home' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                         >
-                        <a href="#" @click="navigateToHowItWorks" :class="route.name === 'how-it-works' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
-                            >Como Funciona</a
+                            Início
+                        </button>
+                        <button
+                            type="button"
+                            class="bg-transparent border-0 p-0"
+                            @click="navigateToBAA"
+                            :class="route.name === 'baa' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                         >
-                        <a
-                            href="#"
+                            BAA - Boletim do Atleta Amador
+                        </button>
+                        <button
+                            type="button"
+                            class="bg-transparent border-0 p-0"
+                            @click="navigateToHowItWorks"
+                            :class="route.name === 'how-it-works' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
+                        >
+                            Como Funciona
+                        </button>
+                        <button
+                            type="button"
+                            class="bg-transparent border-0 p-0"
                             @click="navigateToAdvertiseField"
-                            :class="route.name === 'anunciar-campo' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
-                            >Anunciar seu campo</a
+                            :class="route.name === 'advertise-field' ? 'text-primary font-medium border-b-2 border-primary-500' : 'text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer'"
                         >
+                            Anunciar seu campo
+                        </button>
                     </nav>
                 </div>
 
@@ -209,10 +232,12 @@ const handleSearch = () => {
                 </div>
 
                 <nav class="px-4 py-2 space-y-2">
-                    <a href="/campos" class="block px-4 py-3 text-primary-500 bg-primary-50 rounded-lg font-medium">Campos</a>
-                    <a @click="navigateToHowItWorks" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer">Como Funciona</a>
-                    <a @click="navigateToBAA" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer">BAA - Boletim do Atleta Amador</a>
-                    <a href="#" class="block px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors">Seja Parceiro</a>
+                    <button type="button" class="block w-full text-left px-4 py-3 text-primary-500 bg-primary-50 rounded-lg font-medium" @click="navigateToFields">Campos</button>
+                    <button type="button" class="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer" @click="navigateToHowItWorks">Como Funciona</button>
+                    <button type="button" class="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer" @click="navigateToBAA">
+                        BAA - Boletim do Atleta Amador
+                    </button>
+                    <button type="button" class="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors cursor-pointer" @click="navigateToAdvertiseField">Seja Parceiro</button>
 
                     <hr class="my-4 border-gray-200" />
 
