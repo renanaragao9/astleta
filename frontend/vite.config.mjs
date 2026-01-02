@@ -45,6 +45,7 @@ export default defineConfig({
     },
     build: {
         minify: 'terser',
+        chunkSizeWarningLimit: 1000,
         terserOptions: {
             compress: {
                 drop_console: true,
@@ -56,7 +57,7 @@ export default defineConfig({
                 manualChunks: {
                     vendor: ['vue', 'vue-router', 'pinia'],
                     ui: ['primevue', '@primeuix/themes'],
-                    utils: ['axios', 'date-fns', 'lodash-es']
+                    utils: ['axios']
                 }
             }
         }
