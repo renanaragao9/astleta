@@ -4,6 +4,7 @@ import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
     optimizeDeps: {
@@ -13,6 +14,16 @@ export default defineConfig({
         vue(),
         Components({
             resolvers: [PrimeVueResolver()]
+        }),
+        createHtmlPlugin({
+            minify: true,
+            entry: '/src/main.ts',
+            template: 'index.html',
+            inject: {
+                data: {
+                    isProduction: process.env.NODE_ENV === 'production'
+                }
+            }
         })
     ],
     resolve: {
@@ -44,7 +55,8 @@ export default defineConfig({
             output: {
                 manualChunks: {
                     vendor: ['vue', 'vue-router', 'pinia'],
-                    ui: ['primevue', '@primeuix/themes']
+                    ui: ['primevue', '@primeuix/themes'],
+                    utils: ['axios', 'date-fns', 'lodash-es']
                 }
             }
         }

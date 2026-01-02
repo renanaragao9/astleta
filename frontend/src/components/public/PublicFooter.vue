@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-16 min-h-[400px]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
                 <div>

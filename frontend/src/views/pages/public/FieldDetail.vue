@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, watch, defineAsyncComponent } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useHead } from '@vueuse/head';
 import { usePublicFieldStore } from '@/stores/public/publicFieldStore';
@@ -20,9 +20,10 @@ import Tag from 'primevue/tag';
 import { useFormat } from '@/utils/useFormat';
 import { getErrorMessage } from '@/utils/errorUtils';
 import { GOOGLE_API_KEY } from '@/config/apiGoogle';
-import PublicTopbar from '@/components/public/PublicTopbar.vue';
-import PublicFooter from '@/components/public/PublicFooter.vue';
 import { formatPhone } from '@/utils/phoneFormatter';
+
+const PublicTopbar = defineAsyncComponent(() => import('@/components/public/PublicTopbar.vue'));
+const PublicFooter = defineAsyncComponent(() => import('@/components/public/PublicFooter.vue'));
 
 const route = useRoute();
 const router = useRouter();
@@ -442,7 +443,15 @@ useHead({
                     <div class="lg:col-span-2 space-y-8">
                         <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden">
                             <div class="relative h-96 md:h-[500px]">
-                                <img v-if="images.length > 0" :src="images[currentImageIndex]" :alt="`${field.name} - Imagem ${currentImageIndex + 1}`" class="w-full h-full object-cover cursor-pointer" @click="openImageModal" />
+                                <img
+                                    v-if="images.length > 0"
+                                    :src="images[currentImageIndex]"
+                                    :alt="`${field.name} - Imagem ${currentImageIndex + 1}`"
+                                    class="w-full h-full object-cover cursor-pointer"
+                                    @click="openImageModal"
+                                    fetchpriority="high"
+                                    loading="eager"
+                                />
                                 <div v-else class="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-700">
                                     <i class="pi pi-image text-6xl text-gray-400"></i>
                                 </div>

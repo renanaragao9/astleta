@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch, provide } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch, provide, defineAsyncComponent } from 'vue';
 import { useRouter } from 'vue-router';
 import { useHead } from '@vueuse/head';
 import { usePublicFieldStore } from '@/stores/public/publicFieldStore';
@@ -8,8 +8,9 @@ import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import Select from 'primevue/select';
 import InputNumber from 'primevue/inputnumber';
-import PublicTopbar from '@/components/public/PublicTopbar.vue';
-import PublicFooter from '@/components/public/PublicFooter.vue';
+
+const PublicTopbar = defineAsyncComponent(() => import('@/components/public/PublicTopbar.vue'));
+const PublicFooter = defineAsyncComponent(() => import('@/components/public/PublicFooter.vue'));
 
 interface BeforeInstallPromptEvent extends Event {
     prompt(): Promise<void>;

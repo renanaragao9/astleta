@@ -3,3 +3,43 @@
 @use '@/assets/tailwind.css';
 @use '@/assets/layout/layout.scss';
 @use '@/assets/demo/demo.scss';
+
+/* Optimize font display */
+@font-face {
+    font-family: 'primeicons';
+    src: url('primeicons/fonts/primeicons.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* For Lato fonts from CDN */
+@font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.cdnfonts.com/s/14882/Lato-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.cdnfonts.com/s/14882/Lato-Medium.woff') format('woff');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.cdnfonts.com/s/14882/Lato-SemiBold.woff') format('woff');
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('https://fonts.cdnfonts.com/s/14882/Lato-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
